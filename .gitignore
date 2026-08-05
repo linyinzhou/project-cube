@@ -1,0 +1,14 @@
+# Obsidian machine-specific state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache/
+
+# Local exports and temporary files
+Data/*.json
+Data/*.csv
+Data/*.txt
+!Data/.gitkeep
+
+# OS files
+Thumbs.db
+.DS_Store

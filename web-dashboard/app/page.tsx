@@ -1,3 +1,8 @@
+"use client";
+
+import { useState } from "react";
+import { InteractiveFormulaList } from "../src/components/InteractiveFormulaList";
+
 const phases = [
   { name: "Cross", time: 8.26, target: 4, tone: "blue", note: "偶尔可进 6 秒，稳定性不足" },
   { name: "F2L", time: 28.86, target: 17, tone: "red", note: "首要瓶颈：寻块、配对与停顿" },
@@ -136,9 +141,7 @@ export default function Home() {
           </div>
           <div className="scramble-panel">
             <div className="panel-heading"><h3>Day 2 打乱</h3><span>6 scrambles</span></div>
-            <ol className="scramble-list">
-              {scrambles.map((scramble, index) => <li key={scramble}><span>{index + 1}</span><code>{scramble}</code></li>)}
-            </ol>
+            <InteractiveFormulaList items={scrambles} />
           </div>
         </section></>}
 
@@ -213,6 +216,3 @@ export default function Home() {
     </main>
   );
 }
-"use client";
-
-import { useState } from "react";

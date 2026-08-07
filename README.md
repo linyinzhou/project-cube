@@ -15,6 +15,10 @@ This project focuses on:
 
 This project does **not** implement a timer. All solve timing and raw solve history come from [csTimer](https://www.cstimer.net/).
 
+## Online Dashboard
+
+The online dashboard is available at [linyinzhou.github.io/project-cube](https://linyinzhou.github.io/project-cube/). It provides switchable views for today's session, the current seven-session training cycle, and the six-month roadmap.
+
 ## Vault Structure
 
 - `Dashboard.md`: current focus, quick links, and next actions.

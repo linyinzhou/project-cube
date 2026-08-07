@@ -4,12 +4,29 @@ tags:
   - cube/plan/weekly
   - cube/cfop
 week: 1
-status: active
+status: in-progress
 starting_average_seconds: 50
 planned_minutes: 240
+calendar_days: 14
+training_cadence: every-other-day
+current_progress: "Day 1 completed; Day 2 pending"
 ---
 
 # 第 1 周：CFOP 基础与瓶颈定位
+
+> [!info] 执行节奏
+> 本计划中的“第 1 周”是一个约 14 天的训练周期。隔天完成一个 Day，休息日只熟悉内容或完全休息；未完成的任务直接顺延，不需要补课。
+
+| 自然日建议 | 任务 | 状态 |
+| --- | --- | --- |
+| 第 1-2 天 | 熟悉计划和 Day 1 要求 | 已完成 |
+| 第 3 天 | Day 1：基线与技能清单 | 已完成 |
+| 第 5 天 | Day 2：直觉 F2L 配对 | 下一次 |
+| 第 7 天 | Day 3：2-look OLL 入门 | 未开始 |
+| 第 9 天 | Day 4：2-look PLL 入门 | 未开始 |
+| 第 11 天 | Day 5：F2L 慢拧与少转体 | 未开始 |
+| 第 13 天 | Day 6：整合与周期测试 | 未开始 |
+| 第 14 天 | Day 7：恢复与周期复盘 | 未开始 |
 
 ## 本周目标
 
@@ -42,9 +59,11 @@ planned_minutes: 240
 
 ### 完成标准
 
-- 记录 8 次成绩、ao5 和 ao8 平均值。
-- 列出目前会用的 OLL/PLL 公式名称或外观。
-- 找到出现次数最多的停顿阶段。
+- [x] 记录 8 次成绩、ao5 和 8 次平均值。
+- [x] 列出目前会用的 OLL/PLL 公式名称或外观。
+- [x] 找到出现次数最多的停顿阶段。
+
+Day 1 结果：[[Training Logs/2026-08-06 Day 1 Baseline|基线日志]]
 
 ## Day 2：直觉 F2L 配对（40 分钟）
 
@@ -162,7 +181,7 @@ planned_minutes: 240
 
 1. 公式闭眼回忆 5 分钟：不拿魔方，写出四个公式。
 2. 轻松复习 5 分钟：每个公式做 3 次，不计时。
-3. 使用 [[Templates/Weekly Rev          iew|周复盘模板]] 完成 10 分钟复盘。
+3. 使用 [[Templates/Weekly Review|周复盘模板]] 完成 10 分钟复盘。
 4. 只选择一个下周主要短板：F2L 配对、F2L 停顿、OLL 识别、PLL 识别或公式稳定性。
 
 ## 周末反馈

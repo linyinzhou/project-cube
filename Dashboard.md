@@ -6,6 +6,8 @@ tags:
 status: active
 current_method: CFOP
 method_status: under-evaluation
+training_cadence: every-other-day
+current_session: "Week 01 / Day 2 pending"
 target_seconds: 30
 target_date: 2027-02-05
 ---
@@ -17,18 +19,23 @@ target_date: 2027-02-05
 
 ## 当前状态
 
-- 当前水平：平均 50+ 秒
+- 当前水平：Day 1 平均 58.04 秒，ao5 56.49 秒，best 39.82 秒
 - 当前阶段：CFOP 基础与基线测评
 - 当前方法：CFOP（作为起点，不锁定）
-- 本周主要短板：待测评
-- 本周辅助训练：待测评
+- 当前进度：第 1 训练周期，Day 1 已完成，下一次执行 Day 2
+- 训练节奏：隔天一练，原一周计划用约 14 天完成
+- 调整方式：每次训练后根据日志决定继续、重复、降难度或进阶
+- 本周主要短板：F2L 寻块、配对和稳定性
+- 本周辅助训练：PLL 识别与执行稳定性
 - 数据来源：[csTimer](https://www.cstimer.net/)
 - 计时器开发：不在项目范围内
 
 ## 下一步
 
 - [ ] 完成 [[Assessments/Baseline Assessment|基线测评]]
-- [ ] 执行 [[Plans/Week 01 - CFOP Foundation|第 1 周逐日训练计划]]
+- [x] 完成 [[Training Logs/2026-08-06 Day 1 Baseline|Day 1 基线与技能清单]]
+- [ ] 完成 [[Plans/Week 01 - CFOP Foundation#Day 2：直觉 F2L 配对（40 分钟）|Day 2 直觉 F2L 配对]]
+- [ ] 按隔日节奏执行 [[Plans/Week 01 - CFOP Foundation|第 1 训练周期计划]]
 - [ ] 根据首周结果确定第一个四周训练块
 - [ ] 第 4 周完成 [[Assessments/Method Evaluation|速拧方法评估]]
 - [ ] 从 [[Templates/Training Session|训练记录模板]] 创建首次训练记录
@@ -36,6 +43,7 @@ target_date: 2027-02-05
 
 ## 快速入口
 
+- [[Cube Training Dashboard.base|训练 Dashboard]]
 - [[Plans/Six-Month Sub-30 Plan|半年 Sub-30 计划]]
 - [[Plans/Week 01 - CFOP Foundation|第 1 周逐日训练计划]]
 - [[Assessments/Baseline Assessment|基线测评]]
@@ -43,17 +51,37 @@ target_date: 2027-02-05
 - [[Templates/Training Session|训练记录模板]]
 - [[Templates/Weekly Review|周复盘模板]]
 
+## 训练 Dashboard
+
+> [!info]
+> 下列视图会自动读取训练日志和计划的 properties。新增日志后无需手工维护表格。
+
+### 训练记录
+
+![[Cube Training Dashboard.base#训练记录]]
+
+### 训练计划
+
+![[Cube Training Dashboard.base#训练计划]]
+
+### 测评
+
+![[Cube Training Dashboard.base#测评]]
+
 ## 核心指标
 
 | 指标 | 当前值 | 阶段目标 |
 | --- | ---: | ---: |
+| Day 1 平均（8 次） | 58.04 s | 先稳定 Sub-50 |
+| ao5 | 56.49 s | 先稳定 Sub-50 |
+| best single | 39.82 s | 仅作潜力参考 |
 | ao100 | 待测 | < 30.00 s |
 | 成功率（< 30 s） | 待测 | >= 80% |
 | DNF / +2 比例 | 待测 | < 3% |
-| Cross | 待测 | <= 4.0 s |
-| F2L | 待测 | <= 17.0 s |
-| OLL | 待测 | <= 4.0 s |
-| PLL | 待测 | <= 3.0 s |
+| Cross | 8.26 s | <= 4.0 s |
+| F2L | 28.86 s | <= 17.0 s |
+| OLL | 8.67 s | <= 4.0 s |
+| PLL | 12.23 s | <= 3.0 s |
 | 转换与停顿 | 待测 | <= 2.0 s |
 
 > [!note]

@@ -1,0 +1,106 @@
+filters:
+  or:
+    - 'file.hasTag("cube/training")'
+    - 'file.hasTag("cube/plan/weekly")'
+    - 'file.inFolder("Assessments")'
+
+formulas:
+  gap_to_target: 'if(average_seconds, (average_seconds - target_seconds).round(2), "")'
+  improvement_from_baseline: 'if(average_seconds, (baseline_seconds - average_seconds).round(2), "")'
+
+properties:
+  file.name:
+    displayName: "记录"
+  date:
+    displayName: "日期"
+  method:
+    displayName: "方法"
+  session_type:
+    displayName: "训练类型"
+  primary_focus:
+    displayName: "训练重点"
+  solves:
+    displayName: "还原数"
+  average_seconds:
+    displayName: "平均(s)"
+  best_single_seconds:
+    displayName: "最佳(s)"
+  ao5_seconds:
+    displayName: "ao5(s)"
+  cross_seconds:
+    displayName: "Cross(s)"
+  f2l_seconds:
+    displayName: "F2L(s)"
+  oll_seconds:
+    displayName: "OLL(s)"
+  pll_seconds:
+    displayName: "PLL(s)"
+  formula.gap_to_target:
+    displayName: "距Sub-30(s)"
+  formula.improvement_from_baseline:
+    displayName: "较基线提升(s)"
+  status:
+    displayName: "状态"
+  next_action:
+    displayName: "下一步"
+  week:
+    displayName: "训练周期"
+  current_progress:
+    displayName: "当前进度"
+  calendar_days:
+    displayName: "周期天数"
+  planned_minutes:
+    displayName: "计划分钟"
+  assessment_date:
+    displayName: "测评日期"
+
+views:
+  - type: table
+    name: "训练记录"
+    filters:
+      and:
+        - 'file.hasTag("cube/training")'
+    order:
+      - date
+      - file.name
+      - primary_focus
+      - solves
+      - average_seconds
+      - best_single_seconds
+      - ao5_seconds
+      - cross_seconds
+      - f2l_seconds
+      - oll_seconds
+      - pll_seconds
+      - formula.gap_to_target
+      - formula.improvement_from_baseline
+      - next_action
+    summaries:
+      solves: Sum
+      average_seconds: Average
+      best_single_seconds: Min
+      ao5_seconds: Average
+
+  - type: table
+    name: "训练计划"
+    filters:
+      and:
+        - 'file.hasTag("cube/plan/weekly")'
+    order:
+      - week
+      - file.name
+      - status
+      - current_progress
+      - training_cadence
+      - calendar_days
+      - planned_minutes
+
+  - type: table
+    name: "测评"
+    filters:
+      and:
+        - 'file.inFolder("Assessments")'
+    order:
+      - file.name
+      - status
+      - assessment_date

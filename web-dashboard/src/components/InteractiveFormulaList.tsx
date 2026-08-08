@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 
 type SequenceType = "scramble" | "case";
 type ViewerMode = "state" | "playback";
@@ -81,6 +81,7 @@ function FormulaViewer({ sequence, sequenceType }: FormulaViewerProps) {
 
 export function InteractiveFormulaList({ items, sequenceType = "scramble" }: InteractiveFormulaListProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const listId = useId().replace(/:/g, "");
 
   return (
     <ol className="scramble-list">
@@ -90,11 +91,11 @@ export function InteractiveFormulaList({ items, sequenceType = "scramble" }: Int
           <li className={isActive ? "expanded" : ""} key={sequence}>
             <span>{index + 1}</span>
             <code>{sequence}</code>
-            <button className="preview-toggle" onClick={() => setActiveIndex(isActive ? null : index)} aria-expanded={isActive} aria-controls={`formula-viewer-${index}`}>
+            <button className="preview-toggle" onClick={() => setActiveIndex(isActive ? null : index)} aria-expanded={isActive} aria-controls={`${listId}-formula-viewer-${index}`}>
               {isActive ? "收起" : "3D 预览"}
             </button>
             {isActive && (
-              <div id={`formula-viewer-${index}`} className="viewer-slot">
+              <div id={`${listId}-formula-viewer-${index}`} className="viewer-slot">
                 <FormulaViewer sequence={sequence} sequenceType={sequenceType} />
               </div>
             )}

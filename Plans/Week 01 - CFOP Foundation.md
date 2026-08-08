@@ -9,7 +9,7 @@ starting_average_seconds: 50
 planned_minutes: 240
 calendar_days: 14
 training_cadence: every-other-day
-current_progress: "Day 1 completed; Day 2 pending"
+current_progress: "Day 1-2 completed; Day 3 pending"
 ---
 
 # 第 1 周：CFOP 基础与瓶颈定位
@@ -21,8 +21,8 @@ current_progress: "Day 1 completed; Day 2 pending"
 | --- | --- | --- |
 | 第 1-2 天 | 熟悉计划和 Day 1 要求 | 已完成 |
 | 第 3 天 | Day 1：基线与技能清单 | 已完成 |
-| 第 5 天 | Day 2：直觉 F2L 配对 | 下一次 |
-| 第 7 天 | Day 3：2-look OLL 入门 | 未开始 |
+| 第 5 天 | Day 2：直觉 F2L 配对 | 已完成（18 / 20） |
+| 第 7 天 | Day 3：2-look OLL 入门 | 下一次 |
 | 第 9 天 | Day 4：2-look PLL 入门 | 未开始 |
 | 第 11 天 | Day 5：F2L 慢拧与少转体 | 未开始 |
 | 第 13 天 | Day 6：整合与周期测试 | 未开始 |
@@ -84,10 +84,12 @@ Day 1 结果：[[Training Logs/2026-08-06 Day 1 Baseline|基线日志]]
 
 ### 完成标准
 
-- 至少 20 次在转动前正确指出一个角棱 pair。
-- 整组训练不以速度为目标，尽量不做无目的 U 转。
+- [x] 至少 20 次在转动前正确指出一个角棱 pair。（实际 18 / 20，接近达标）
+- [x] 整组训练不以速度为目标，尽量不做无目的 U 转。
 
-## Day 3：2-look OLL 入门（35 分钟）
+Day 2 结果：[[Training Logs/2026-08-08 Day 2 Intuitive F2L|训练日志]]
+
+## Day 3：2-look OLL 入门（40 分钟）
 
 ### 今日公式
 
@@ -96,10 +98,11 @@ Day 1 结果：[[Training Logs/2026-08-06 Day 1 Baseline|基线日志]]
 
 ### 内容
 
-1. 手法热身 5 分钟：两个公式各慢做 5 次。
-2. 识别训练 10 分钟：打乱后先观察顶层角块方向，不计时说出 Sune、Anti-Sune 或“其他”。
-3. 专项 15 分钟：下面每个打乱做 2 次；第一次看清再执行，第二次计时。
-4. 完整还原 5 分钟：3 次慢拧，只关注进入 OLL 后能否立即判断。
+1. F2L 衔接 5 分钟：任选 Day 2 的前两个打乱，找到一个 pair 后只做 3 个慢动作，眼睛持续跟踪角块和棱块；共做 5 次。
+2. 手法热身 5 分钟：两个公式各慢做 5 次。
+3. 识别训练 10 分钟：打乱后先观察顶层角块方向，不计时说出 Sune、Anti-Sune 或“其他”。
+4. 专项 15 分钟：下面每个打乱做 2 次；第一次看清再执行，第二次计时。
+5. 完整还原 5 分钟：3 次慢拧，只关注进入 OLL 后能否立即判断。
 
 ### OLL 打乱
 
@@ -112,6 +115,7 @@ Day 1 结果：[[Training Logs/2026-08-06 Day 1 Baseline|基线日志]]
 
 ### 完成标准
 
+- F2L 衔接练习 5 次中至少 4 次没有在转动中丢失 pair。
 - Sune 和 Anti-Sune 各连续 5 次无转错。
 - 能在 3 秒内把遇到的 case 归类为“会”或“不会”。
 

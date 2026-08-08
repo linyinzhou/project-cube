@@ -35,6 +35,10 @@ properties:
     displayName: "OLL(s)"
   pll_seconds:
     displayName: "PLL(s)"
+  pair_recognition_successes:
+    displayName: "Pair成功数"
+  completion_rate:
+    displayName: "完成率(%)"
   formula.gap_to_target:
     displayName: "距Sub-30(s)"
   formula.improvement_from_baseline:
@@ -72,6 +76,8 @@ views:
       - f2l_seconds
       - oll_seconds
       - pll_seconds
+      - pair_recognition_successes
+      - completion_rate
       - formula.gap_to_target
       - formula.improvement_from_baseline
       - next_action

@@ -21,19 +21,24 @@ const solves = [
   { no: 8, total: "54.91", cross: "6.50", f2l: "27.63", oll: "4.93", pll: "15.84" },
 ] as const;
 
-const scrambles = [
-  "B' U B2 R L' B' R L B' R2 F U2 D2 F' D2 B' D2 B U2 D2",
-  "F2 U2 R' F2 L F2 L2 D2 B2 D2 B2 R B R' U' R U2 B L",
-  "L2 U' L' U B2 U2 B L' F2 U2 B' R2 B' U2 L2 B' R2 B' D2 U",
-  "D2 L U2 F2 R U2 L' D2 B2 L2 B R U' L' R' U' B' L2",
-  "F' U' B2 D2 L B2 L2 R D2 R' D2 F L U L F2 L2 F2",
-  "F' L' U' L' F' D2 R' F' D2 L2 F2 U2 L2 B' R2 F' R2 B2 L2",
+const dayThreeAlgorithms = [
+  "R U R' U R U2 R'",
+  "R U2 R' U' R U' R'",
+] as const;
+
+const dayThreeScrambles = [
+  "R B2 D2 L2 D' L2 D' B2 R2 U R F U R U' R' F'",
+  "U B2 F2 D B2 L2 F2 U F2 B' R2 B L2 F' U2 F'",
+  "R2 D B2 D' F2 D B2 D' F2 R' B U B' U' R'",
+  "L F' L F D F' D' L2 F' U2 B' U2 B L2 F' L2 F2",
+  "U2 L' B2 L' F2 L B2 L' F2 L' U F U' F' L'",
+  "F' L2 B L B' L F R2 U' R2 D B2 L2 U L2 D' B2",
 ] as const;
 
 const plan = [
   { day: "Day 1", focus: "基线与技能清单", state: "完成" },
-  { day: "Day 2", focus: "直觉 F2L 配对", state: "下一次" },
-  { day: "Day 3", focus: "2-look OLL 入门", state: "未开始" },
+  { day: "Day 2", focus: "直觉 F2L 配对", state: "完成 · 18/20" },
+  { day: "Day 3", focus: "2-look OLL 入门", state: "下一次" },
   { day: "Day 4", focus: "2-look PLL 入门", state: "未开始" },
   { day: "Day 5", focus: "F2L 慢拧与少转体", state: "未开始" },
   { day: "Day 6", focus: "整合与周期测试", state: "未开始" },
@@ -62,7 +67,7 @@ export default function Home() {
         </div>
         <div className="top-status">
           <span className="status-dot" />
-          <span>第 1 周期 · Day 2 待训练</span>
+          <span>第 1 周期 · Day 3 待训练</span>
         </div>
       </header>
 
@@ -73,7 +78,7 @@ export default function Home() {
               <p className="eyebrow">OVERVIEW</p>
               <h2 id="overview-title">从 58.04 秒到稳定 Sub-30</h2>
             </div>
-            <p className="updated">更新于 2026-08-06</p>
+            <p className="updated">更新于 2026-08-08</p>
           </div>
 
           <div className="metric-grid">
@@ -130,18 +135,21 @@ export default function Home() {
         <section className="next-session" aria-labelledby="next-title">
           <div className="next-copy">
             <p className="eyebrow">NEXT SESSION · 40 MIN</p>
-            <h2 id="next-title">Day 2 · 直觉 F2L 配对</h2>
-            <p className="session-intro">今天不追求速度。每次转动前先找到角块和棱块，确认它们是一组，再开始配对。</p>
+            <h2 id="next-title">Day 3 · 2-look OLL 入门</h2>
+            <p className="session-intro">先用 5 分钟巩固 F2L 跟踪，再学习 Sune 与 Anti-Sune。重点是看懂顶层角块方向，不追求公式速度。</p>
             <ol className="session-steps">
-              <li><span>05</span><div><strong>Cross 热身</strong><p>只做 Cross，不计时。</p></div></li>
-              <li><span>25</span><div><strong>F2L 专项</strong><p>使用 6 个打乱；先指出一个 pair，再慢速完成全部 F2L。</p></div></li>
-              <li><span>10</span><div><strong>完整慢拧</strong><p>完成 5 次，每个 pair 开始前都先看清角块和棱块。</p></div></li>
+              <li><span>05</span><div><strong>F2L 衔接</strong><p>找到一个 pair 后只做 3 个慢动作，眼睛持续跟踪；共 5 次。</p></div></li>
+              <li><span>15</span><div><strong>公式与识别</strong><p>Sune、Anti-Sune 各慢做 5 次，再判断遇到的 case。</p></div></li>
+              <li><span>15</span><div><strong>OLL 专项</strong><p>6 个打乱各做 2 次：第一次看清，第二次计时。</p></div></li>
+              <li><span>05</span><div><strong>完整慢拧</strong><p>完成 3 次，只关注进入 OLL 后能否立即判断。</p></div></li>
             </ol>
-            <div className="success-rule"><strong>完成标准</strong><span>至少 20 次在转动前正确指出一个角棱 pair。</span></div>
+            <div className="success-rule"><strong>完成标准</strong><span>F2L 跟踪至少 4/5；两个公式各连续 5 次无转错。</span></div>
           </div>
           <div className="scramble-panel">
-            <div className="panel-heading"><h3>Day 2 打乱</h3><span>6 scrambles</span></div>
-            <InteractiveFormulaList items={scrambles} />
+            <div className="panel-heading"><h3>今日公式</h3><span>Sune · Anti-Sune</span></div>
+            <InteractiveFormulaList items={dayThreeAlgorithms} sequenceType="case" />
+            <div className="panel-heading panel-subheading"><h3>Day 3 OLL 打乱</h3><span>6 scrambles</span></div>
+            <InteractiveFormulaList items={dayThreeScrambles} />
           </div>
         </section></>}
 
@@ -150,10 +158,10 @@ export default function Home() {
             <div><strong>14</strong><span>自然日</span></div>
             <div><strong>7</strong><span>训练日</span></div>
             <div><strong>≈4h</strong><span>周期训练量</span></div>
-            <div><strong>1 / 7</strong><span>当前完成</span></div>
+            <div><strong>2 / 7</strong><span>当前完成</span></div>
           </div>
           <div className="plan-section">
-            <div className="section-heading"><div><p className="eyebrow">TRAINING CYCLE</p><h2 id="plan-title">第 1 训练周期</h2></div><span className="cycle-count">1 / 7</span></div>
+            <div className="section-heading"><div><p className="eyebrow">TRAINING CYCLE</p><h2 id="plan-title">第 1 训练周期</h2></div><span className="cycle-count">2 / 7</span></div>
             <p className="muted">隔天一练，约 14 个自然日完成。不补课，未完成任务顺延。</p>
             <div className="plan-list">
               {plan.map((item, index) => (

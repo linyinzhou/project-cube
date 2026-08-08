@@ -7,7 +7,7 @@ status: active
 current_method: CFOP
 method_status: under-evaluation
 training_cadence: every-other-day
-current_session: "Week 01 / Day 2 pending"
+current_session: "Week 01 / Day 3 pending"
 target_seconds: 30
 target_date: 2027-02-05
 ---
@@ -22,7 +22,7 @@ target_date: 2027-02-05
 - 当前水平：Day 1 平均 58.04 秒，ao5 56.49 秒，best 39.82 秒
 - 当前阶段：CFOP 基础与基线测评
 - 当前方法：CFOP（作为起点，不锁定）
-- 当前进度：第 1 训练周期，Day 1 已完成，下一次执行 Day 2
+- 当前进度：第 1 训练周期，Day 1-2 已完成，下一次执行 Day 3
 - 训练节奏：隔天一练，原一周计划用约 14 天完成
 - 调整方式：每次训练后根据日志决定继续、重复、降难度或进阶
 - 本周主要短板：F2L 寻块、配对和稳定性
@@ -34,7 +34,8 @@ target_date: 2027-02-05
 
 - [ ] 完成 [[Assessments/Baseline Assessment|基线测评]]
 - [x] 完成 [[Training Logs/2026-08-06 Day 1 Baseline|Day 1 基线与技能清单]]
-- [ ] 完成 [[Plans/Week 01 - CFOP Foundation#Day 2：直觉 F2L 配对（40 分钟）|Day 2 直觉 F2L 配对]]
+- [x] 完成 [[Training Logs/2026-08-08 Day 2 Intuitive F2L|Day 2 直觉 F2L 配对]]（18 / 20，接近达标）
+- [ ] 完成 [[Plans/Week 01 - CFOP Foundation#Day 3：2-look OLL 入门（40 分钟）|Day 3 2-look OLL 入门]]
 - [ ] 按隔日节奏执行 [[Plans/Week 01 - CFOP Foundation|第 1 训练周期计划]]
 - [ ] 根据首周结果确定第一个四周训练块
 - [ ] 第 4 周完成 [[Assessments/Method Evaluation|速拧方法评估]]
@@ -69,6 +70,9 @@ target_date: 2027-02-05
 ![[Cube Training Dashboard.base#测评]]
 
 ## 核心指标
+
+> [!info] Day 2 动态调整
+> 已完成 5 次完整慢拧，正确指出角棱 pair 18 / 20。Day 3 正常推进，但增加 5 分钟 F2L 跟踪衔接练习。
 
 | 指标 | 当前值 | 阶段目标 |
 | --- | ---: | ---: |

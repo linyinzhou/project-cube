@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { FormulaLibrary } from "../src/components/FormulaLibrary";
 import { InteractiveFormulaList } from "../src/components/InteractiveFormulaList";
 
 const phases = [
@@ -55,7 +56,7 @@ const milestones = [
 ] as const;
 
 export default function Home() {
-  const [activeView, setActiveView] = useState<"today" | "cycle" | "long">("today");
+  const [activeView, setActiveView] = useState<"today" | "cycle" | "long" | "library">("today");
 
   return (
     <main>
@@ -103,10 +104,11 @@ export default function Home() {
           </div>
         </section>
 
-        <nav className="view-switcher" aria-label="训练计划时间范围">
+        <nav className="view-switcher" aria-label="训练页面栏目">
           <button className={activeView === "today" ? "active" : ""} onClick={() => setActiveView("today")} aria-pressed={activeView === "today"}>今日训练</button>
           <button className={activeView === "cycle" ? "active" : ""} onClick={() => setActiveView("cycle")} aria-pressed={activeView === "cycle"}>7日周期</button>
           <button className={activeView === "long" ? "active" : ""} onClick={() => setActiveView("long")} aria-pressed={activeView === "long"}>半年计划</button>
+          <button className={activeView === "library" ? "active" : ""} onClick={() => setActiveView("library")} aria-pressed={activeView === "library"}>公式库</button>
         </nav>
 
         {activeView === "today" && <><section className="split-section" aria-labelledby="split-title">
@@ -218,6 +220,8 @@ export default function Home() {
             </article>
           </div>
         </section>}
+
+        {activeView === "library" && <FormulaLibrary />}
       </div>
 
       <footer><span>Cube Training · CFOP 起步，不锁定方法</span><span>成绩来源：csTimer</span></footer>

@@ -6,6 +6,7 @@ type ViewerMode = "state" | "playback";
 interface FormulaViewerProps {
   sequence: string;
   sequenceType: SequenceType;
+  setupSequence?: string;
 }
 
 interface InteractiveFormulaListProps {
@@ -13,7 +14,7 @@ interface InteractiveFormulaListProps {
   sequenceType?: SequenceType;
 }
 
-function FormulaViewer({ sequence, sequenceType }: FormulaViewerProps) {
+export function FormulaViewer({ sequence, sequenceType, setupSequence }: FormulaViewerProps) {
   const hostRef = useRef<HTMLDivElement>(null);
   const [mode, setMode] = useState<ViewerMode>("state");
   const [loadState, setLoadState] = useState<"loading" | "ready" | "error">("loading");
@@ -29,11 +30,12 @@ function FormulaViewer({ sequence, sequenceType }: FormulaViewerProps) {
 
         const isCase = sequenceType === "case";
         const isPlayback = mode === "playback";
+        const hasExplicitSetup = isCase && Boolean(setupSequence);
         const player = new TwistyPlayer({
           puzzle: "3x3x3",
-          alg: isCase || isPlayback ? sequence : "",
-          experimentalSetupAlg: isCase || isPlayback ? "x2 y2" : `x2 y2 ${sequence}`,
-          experimentalSetupAnchor: isCase ? "end" : "start",
+          alg: hasExplicitSetup ? (isPlayback ? sequence : "") : isCase || isPlayback ? sequence : "",
+          experimentalSetupAlg: hasExplicitSetup ? `x2 y2 ${setupSequence}` : isCase || isPlayback ? "x2 y2" : `x2 y2 ${sequence}`,
+          experimentalSetupAnchor: isCase && !hasExplicitSetup ? "end" : "start",
           visualization: "3D",
           background: "none",
           controlPanel: mode === "playback" ? "bottom-row" : "none",
@@ -56,7 +58,7 @@ function FormulaViewer({ sequence, sequenceType }: FormulaViewerProps) {
       disposed = true;
       host?.replaceChildren();
     };
-  }, [mode, sequence, sequenceType]);
+  }, [mode, sequence, sequenceType, setupSequence]);
 
   return (
     <div className="formula-viewer">

@@ -17,7 +17,7 @@ This project does **not** implement a timer. All solve timing and raw solve hist
 
 ## Online Dashboard
 
-The online dashboard is available at [linyinzhou.github.io/project-cube](https://linyinzhou.github.io/project-cube/). It provides switchable views for today's session, the current seven-session training cycle, and the six-month roadmap.
+The online dashboard is available at [linyinzhou.github.io/project-cube](https://linyinzhou.github.io/project-cube/). It provides switchable views for today's session, the current seven-session training cycle, the six-month roadmap, and a searchable 119-case CFOP algorithm library with setup algorithms and interactive 3D playback.
 
 ## Vault Structure
 

@@ -14,6 +14,16 @@ interface InteractiveFormulaListProps {
   sequenceType?: SequenceType;
 }
 
+interface TargetedCase {
+  name: string;
+  setup: string;
+  algorithm: string;
+}
+
+interface TargetedCaseListProps {
+  items: readonly TargetedCase[];
+}
+
 export function FormulaViewer({ sequence, sequenceType, setupSequence }: FormulaViewerProps) {
   const hostRef = useRef<HTMLDivElement>(null);
   const [mode, setMode] = useState<ViewerMode>("state");
@@ -99,6 +109,37 @@ export function InteractiveFormulaList({ items, sequenceType = "scramble" }: Int
             {isActive && (
               <div id={`${listId}-formula-viewer-${index}`} className="viewer-slot">
                 <FormulaViewer sequence={sequence} sequenceType={sequenceType} />
+              </div>
+            )}
+          </li>
+        );
+      })}
+    </ol>
+  );
+}
+
+export function TargetedCaseList({ items }: TargetedCaseListProps) {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const listId = useId().replace(/:/g, "");
+
+  return (
+    <ol className="scramble-list targeted-case-list">
+      {items.map((item, index) => {
+        const isActive = activeIndex === index;
+        return (
+          <li className={isActive ? "expanded" : ""} key={item.name}>
+            <span>{index + 1}</span>
+            <div className="target-case-copy">
+              <strong>{item.name}</strong>
+              <p><small>变成目标形状</small><code>{item.setup}</code></p>
+              <p><small>还原公式</small><code>{item.algorithm}</code></p>
+            </div>
+            <button className="preview-toggle" onClick={() => setActiveIndex(isActive ? null : index)} aria-expanded={isActive} aria-controls={`${listId}-case-viewer-${index}`}>
+              {isActive ? "收起" : "3D 预览"}
+            </button>
+            {isActive && (
+              <div id={`${listId}-case-viewer-${index}`} className="viewer-slot">
+                <FormulaViewer sequence={item.algorithm} sequenceType="case" setupSequence={item.setup} />
               </div>
             )}
           </li>

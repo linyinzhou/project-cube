@@ -98,26 +98,31 @@ Day 2 结果：[[Training Logs/2026-08-08 Day 2 Intuitive F2L|训练日志]]
 
 ### 内容
 
-1. F2L 衔接 5 分钟：任选 Day 2 的前两个打乱，找到一个 pair 后只做 3 个慢动作，眼睛持续跟踪角块和棱块；共做 5 次。
-2. 手法热身 5 分钟：两个公式各慢做 5 次。
-3. 识别训练 10 分钟：打乱后先观察顶层角块方向，不计时说出 Sune、Anti-Sune 或“其他”。
-4. 专项 15 分钟：下面每个打乱做 2 次；第一次看清再执行，第二次计时。
-5. 完整还原 5 分钟：3 次慢拧，只关注进入 OLL 后能否立即判断。
+1. F2L 衔接 5 分钟：使用下面两个 F2L 打乱，找到一个 pair 后只做 3 个慢动作，眼睛持续跟踪角块和棱块；共做 5 次。
+2. 辨别复核 10 分钟：混合两个目标形状，先说出 Sune 或 Anti-Sune，再开始转动。
+3. 小鱼定向专项 20 分钟：两个 case 各做 5 次；每次先执行 Setup，再用对应公式还原。
+4. 完整还原 5 分钟：3 次慢拧，只关注进入 OLL 后能否立即判断。
 
-### OLL 打乱
+### F2L 衔接打乱
 
-1. `R B2 D2 L2 D' L2 D' B2 R2 U R F U R U' R' F'`
-2. `U B2 F2 D B2 L2 F2 U F2 B' R2 B L2 F' U2 F'`
-3. `R2 D B2 D' F2 D B2 D' F2 R' B U B' U' R'`
-4. `L F' L F D F' D' L2 F' U2 B' U2 B L2 F' L2 F2`
-5. `U2 L' B2 L' F2 L B2 L' F2 L' U F U' F' L'`
-6. `F' L2 B L B' L F R2 U' R2 D B2 L2 U L2 D' B2`
+1. `B' U B2 R L' B' R L B' R2 F U2 D2 F' D2 B' D2 B U2 D2`
+2. `F2 U2 R' F2 L F2 L2 D2 B2 D2 B2 R B R' U' R U2 B L`
+
+### 小鱼定向专项
+
+| 目标 case | Setup（变成目标形状） | 还原公式 | 次数 |
+| --- | --- | --- | --- |
+| Sune · 小鱼 | `R U2 R' U' R U' R'` | `R U R' U R U2 R'` | 5 |
+| Anti-Sune · 反小鱼 | `R U R' U R U2 R'` | `R U2 R' U' R U' R'` | 5 |
+
+> [!note]
+> 两个公式在 Setup 栏里看起来是互换的，这是正确的：从复原状态执行其中一个公式，会生成另一个公式所解决的目标形状。
 
 ### 完成标准
 
 - F2L 衔接练习 5 次中至少 4 次没有在转动中丢失 pair。
-- Sune 和 Anti-Sune 各连续 5 次无转错。
-- 能在 3 秒内把遇到的 case 归类为“会”或“不会”。
+- Sune 和 Anti-Sune 都能在 3 秒内正确识别。
+- Sune 和 Anti-Sune 各连续 5 次无识别或转动错误。
 
 ## Day 4：2-look PLL 入门（40 分钟）
 

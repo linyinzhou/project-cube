@@ -129,11 +129,11 @@ code { color: #d9dee4; font: 12px/1.65 Consolas, "Courier New", monospace; overf
 .plan-index { display: grid; place-items: center; width: 20px; height: 20px; border: 1px solid #c9ced4; color: var(--muted); font-size: 10px; }
 .plan-row p { margin: 0; color: var(--muted); }
 .plan-state { color: var(--muted); font-size: 11px; }
-.state-0 .plan-index, .state-1 .plan-index { border-color: var(--green); color: white; background: var(--green); }
-.state-0 .plan-state, .state-1 .plan-state { color: var(--green); font-weight: 700; }
-.state-2 { background: #30201f; box-shadow: inset 3px 0 var(--red); }
-.state-2 .plan-index { border-color: var(--red); color: var(--red); }
-.state-2 .plan-state { color: var(--red); font-weight: 800; }
+.state-done .plan-index { border-color: var(--green); color: white; background: var(--green); }
+.state-done .plan-state { color: var(--green); font-weight: 700; }
+.state-current { background: #30201f; box-shadow: inset 3px 0 var(--red); }
+.state-current .plan-index { border-color: var(--red); color: var(--red); }
+.state-current .plan-state { color: var(--red); font-weight: 800; }
 .table-wrap { overflow-x: auto; border: 1px solid var(--line); background: var(--surface); }
 table { width: 100%; border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; }
 th, td { padding: 10px 12px; text-align: right; border-bottom: 1px solid var(--line); }

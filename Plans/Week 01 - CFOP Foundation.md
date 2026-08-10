@@ -9,7 +9,7 @@ starting_average_seconds: 50
 planned_minutes: 240
 calendar_days: 14
 training_cadence: every-other-day
-current_progress: "Day 1-2 completed; Day 3 pending"
+current_progress: "Day 1-3 completed; Day 4 pending"
 ---
 
 # 第 1 周：CFOP 基础与瓶颈定位
@@ -22,8 +22,8 @@ current_progress: "Day 1-2 completed; Day 3 pending"
 | 第 1-2 天 | 熟悉计划和 Day 1 要求 | 已完成 |
 | 第 3 天 | Day 1：基线与技能清单 | 已完成 |
 | 第 5 天 | Day 2：直觉 F2L 配对 | 已完成（18 / 20） |
-| 第 7 天 | Day 3：2-look OLL 入门 | 下一次 |
-| 第 9 天 | Day 4：2-look PLL 入门 | 未开始 |
+| 第 7 天 | Day 3：2-look OLL 入门 | 已完成（F2L 5 / 5，公式 9 / 10） |
+| 第 9 天 | Day 4：2-look PLL 入门 | 下一次 |
 | 第 11 天 | Day 5：F2L 慢拧与少转体 | 未开始 |
 | 第 13 天 | Day 6：整合与周期测试 | 未开始 |
 | 第 14 天 | Day 7：恢复与周期复盘 | 未开始 |
@@ -124,6 +124,8 @@ Day 2 结果：[[Training Logs/2026-08-08 Day 2 Intuitive F2L|训练日志]]
 - Sune 和 Anti-Sune 都能在 3 秒内正确识别。
 - Sune 和 Anti-Sune 各连续 5 次无识别或转动错误。
 
+Day 3 结果：[[Training Logs/2026-08-10 Day 3 Sune Recognition|训练日志]]
+
 ## Day 4：2-look PLL 入门（40 分钟）
 
 ### 今日公式
@@ -133,19 +135,17 @@ Day 2 结果：[[Training Logs/2026-08-08 Day 2 Intuitive F2L|训练日志]]
 
 ### 内容
 
-1. 手法热身 8 分钟：两个公式各慢做 5 次，确保还原。
+1. 手法热身 8 分钟：先各复习 1 次 Sune、Anti-Sune，再将 Ua、Ub 各慢做 5 次。
 2. 识别训练 10 分钟：寻找已经完成的一面或顶层棱块循环方向。
-3. 专项 17 分钟：下面每个打乱做 2 次，先判断再执行。
+3. 专项 17 分钟：下面两个目标 case 各做 5 次，先判断再执行。
 4. 完整还原 5 分钟：3 次慢拧，只记录 PLL 是否识别正确。
 
-### PLL 打乱
+### Ua / Ub 定向专项
 
-1. `F2 L2 B2 L2 D' B2 D R2 D' F2 R2 U' L R U2 L R'`
-2. `R2 D L2 F2 U L2 U' R2 U B2 L R' F2 L' R`
-3. `R2 U' B2 U2 L2 U F2 U' L2 U2 B2 U' L R F2 L' R'`
-4. `F2 D R2 D' R2 U R2 U' R2 F2`
-5. `B2 D L2 U' L2 B2 D' R2 U R2 U'`
-6. `R2 B2 D' F2 D B2 D' F2 D R2 U2`
+| 目标 case | Setup（变成目标形状） | 还原公式 | 次数 |
+| --- | --- | --- | --- |
+| Ua | `R2 U R U R' U' R' U' R' U R'` | `R U' R U R U R U' R' U' R2` | 5 |
+| Ub | `R U' R U R U R U' R' U' R2` | `R2 U R U R' U' R' U' R' U R'` | 5 |
 
 ### 完成标准
 

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { FormulaLibrary } from "../src/components/FormulaLibrary";
-import { InteractiveFormulaList, TargetedCaseList } from "../src/components/InteractiveFormulaList";
+import { TargetedCaseList } from "../src/components/InteractiveFormulaList";
 
 const phases = [
   { name: "Cross", time: 8.26, target: 4, tone: "blue", note: "偶尔可进 6 秒，稳定性不足" },
@@ -22,32 +22,27 @@ const solves = [
   { no: 8, total: "54.91", cross: "6.50", f2l: "27.63", oll: "4.93", pll: "15.84" },
 ] as const;
 
-const dayThreeF2LBridgeScrambles = [
-  "B' U B2 R L' B' R L B' R2 F U2 D2 F' D2 B' D2 B U2 D2",
-  "F2 U2 R' F2 L F2 L2 D2 B2 D2 B2 R B R' U' R U2 B L",
-] as const;
-
-const dayThreeTargetCases = [
+const dayFourTargetCases = [
   {
-    name: "Sune · 小鱼",
-    setup: "R U2 R' U' R U' R'",
-    algorithm: "R U R' U R U2 R'",
+    name: "Ua · 顺时针棱循环",
+    setup: "R2 U R U R' U' R' U' R' U R'",
+    algorithm: "R U' R U R U R U' R' U' R2",
   },
   {
-    name: "Anti-Sune · 反小鱼",
-    setup: "R U R' U R U2 R'",
-    algorithm: "R U2 R' U' R U' R'",
+    name: "Ub · 逆时针棱循环",
+    setup: "R U' R U R U R U' R' U' R2",
+    algorithm: "R2 U R U R' U' R' U' R' U R'",
   },
 ] as const;
 
 const plan = [
-  { day: "Day 1", focus: "基线与技能清单", state: "完成" },
-  { day: "Day 2", focus: "直觉 F2L 配对", state: "完成 · 18/20" },
-  { day: "Day 3", focus: "2-look OLL 入门", state: "下一次" },
-  { day: "Day 4", focus: "2-look PLL 入门", state: "未开始" },
-  { day: "Day 5", focus: "F2L 慢拧与少转体", state: "未开始" },
-  { day: "Day 6", focus: "整合与周期测试", state: "未开始" },
-  { day: "Day 7", focus: "恢复与周期复盘", state: "未开始" },
+  { day: "Day 1", focus: "基线与技能清单", state: "完成", status: "done" },
+  { day: "Day 2", focus: "直觉 F2L 配对", state: "完成 · 18/20", status: "done" },
+  { day: "Day 3", focus: "2-look OLL 入门", state: "完成 · 9/10", status: "done" },
+  { day: "Day 4", focus: "2-look PLL 入门", state: "下一次", status: "current" },
+  { day: "Day 5", focus: "F2L 慢拧与少转体", state: "未开始", status: "pending" },
+  { day: "Day 6", focus: "整合与周期测试", state: "未开始", status: "pending" },
+  { day: "Day 7", focus: "恢复与周期复盘", state: "未开始", status: "pending" },
 ] as const;
 
 const milestones = [
@@ -72,7 +67,7 @@ export default function Home() {
         </div>
         <div className="top-status">
           <span className="status-dot" />
-          <span>第 1 周期 · Day 3 待训练</span>
+          <span>第 1 周期 · Day 4 待训练</span>
         </div>
       </header>
 
@@ -83,7 +78,7 @@ export default function Home() {
               <p className="eyebrow">OVERVIEW</p>
               <h2 id="overview-title">从 58.04 秒到稳定 Sub-30</h2>
             </div>
-            <p className="updated">更新于 2026-08-08</p>
+            <p className="updated">更新于 2026-08-10</p>
           </div>
 
           <div className="metric-grid">
@@ -141,21 +136,19 @@ export default function Home() {
         <section className="next-session" aria-labelledby="next-title">
           <div className="next-copy">
             <p className="eyebrow">NEXT SESSION · 40 MIN</p>
-            <h2 id="next-title">Day 3 · 2-look OLL 入门</h2>
-            <p className="session-intro">先用 5 分钟巩固 F2L 跟踪，再定向复核 Sune 与 Anti-Sune。你已经熟记公式，今天重点是看形状后立即选对公式。</p>
+            <h2 id="next-title">Day 4 · 2-look PLL 入门</h2>
+            <p className="session-intro">Day 3 已完成。今天先快速复习小鱼，再学习 Ua 与 Ub；重点观察顶层棱块的循环方向，不追求完整还原时间。</p>
             <ol className="session-steps">
-              <li><span>05</span><div><strong>F2L 衔接</strong><p>找到一个 pair 后只做 3 个慢动作，眼睛持续跟踪；共 5 次。</p></div></li>
-              <li><span>10</span><div><strong>辨别复核</strong><p>混合两个目标形状，先说出 Sune 或 Anti-Sune，再开始转动。</p></div></li>
-              <li><span>20</span><div><strong>小鱼定向专项</strong><p>两个 case 各做 5 次；每次先执行 Setup，再用对应公式还原。</p></div></li>
-              <li><span>05</span><div><strong>完整慢拧</strong><p>完成 3 次，只关注进入 OLL 后能否立即判断。</p></div></li>
+              <li><span>08</span><div><strong>手法热身</strong><p>小鱼、反小鱼各复习 1 次，再将 Ua、Ub 各慢做 5 次。</p></div></li>
+              <li><span>10</span><div><strong>循环方向识别</strong><p>先找已完成的一面，再判断顶层棱块应顺时针还是逆时针循环。</p></div></li>
+              <li><span>17</span><div><strong>Ua / Ub 定向专项</strong><p>两个 case 各做 5 次；先执行 Setup，判断后再用对应公式还原。</p></div></li>
+              <li><span>05</span><div><strong>完整慢拧</strong><p>完成 3 次，只记录 PLL 是否识别正确，不追求时间。</p></div></li>
             </ol>
-            <div className="success-rule"><strong>完成标准</strong><span>F2L 跟踪至少 4/5；两种形状均能在 3 秒内识别，并各连续 5 次无转错。</span></div>
+            <div className="success-rule"><strong>完成标准</strong><span>Ua、Ub 均能正确识别，并各连续 5 次无转错；不确定时不猜。</span></div>
           </div>
           <div className="scramble-panel">
-            <div className="panel-heading"><h3>F2L 衔接打乱</h3><span>2 scrambles</span></div>
-            <InteractiveFormulaList items={dayThreeF2LBridgeScrambles} />
-            <div className="panel-heading panel-subheading"><h3>小鱼定向专项</h3><span>2 cases</span></div>
-            <TargetedCaseList items={dayThreeTargetCases} />
+            <div className="panel-heading"><h3>Ua / Ub 定向专项</h3><span>2 cases</span></div>
+            <TargetedCaseList items={dayFourTargetCases} />
           </div>
         </section></>}
 
@@ -164,14 +157,14 @@ export default function Home() {
             <div><strong>14</strong><span>自然日</span></div>
             <div><strong>7</strong><span>训练日</span></div>
             <div><strong>≈4h</strong><span>周期训练量</span></div>
-            <div><strong>2 / 7</strong><span>当前完成</span></div>
+            <div><strong>3 / 7</strong><span>当前完成</span></div>
           </div>
           <div className="plan-section">
-            <div className="section-heading"><div><p className="eyebrow">TRAINING CYCLE</p><h2 id="plan-title">第 1 训练周期</h2></div><span className="cycle-count">2 / 7</span></div>
+            <div className="section-heading"><div><p className="eyebrow">TRAINING CYCLE</p><h2 id="plan-title">第 1 训练周期</h2></div><span className="cycle-count">3 / 7</span></div>
             <p className="muted">隔天一练，约 14 个自然日完成。不补课，未完成任务顺延。</p>
             <div className="plan-list">
               {plan.map((item, index) => (
-                <div className={`plan-row state-${index}`} key={item.day}>
+                <div className={`plan-row state-${item.status}`} key={item.day}>
                   <span className="plan-index">{index + 1}</span><strong>{item.day}</strong><p>{item.focus}</p><span className="plan-state">{item.state}</span>
                 </div>
               ))}

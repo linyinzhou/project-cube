@@ -9,7 +9,7 @@ starting_average_seconds: 50
 planned_minutes: 240
 calendar_days: 14
 training_cadence: every-other-day
-current_progress: "Day 1-3 completed; Day 4 pending"
+current_progress: "Day 1-4 completed; Day 5 pending"
 ---
 
 # 第 1 周：CFOP 基础与瓶颈定位
@@ -23,8 +23,8 @@ current_progress: "Day 1-3 completed; Day 4 pending"
 | 第 3 天 | Day 1：基线与技能清单 | 已完成 |
 | 第 5 天 | Day 2：直觉 F2L 配对 | 已完成（18 / 20） |
 | 第 7 天 | Day 3：2-look OLL 入门 | 已完成（F2L 5 / 5，公式 9 / 10） |
-| 第 9 天 | Day 4：2-look PLL 入门 | 下一次 |
-| 第 11 天 | Day 5：F2L 慢拧与少转体 | 未开始 |
+| 第 9 天 | Day 4：2-look PLL 入门 | 已完成（公式 10 / 10，识别 3 / 3） |
+| 第 11 天 | Day 5：F2L 慢拧与少转体 | 下一次 |
 | 第 13 天 | Day 6：整合与周期测试 | 未开始 |
 | 第 14 天 | Day 7：恢复与周期复盘 | 未开始 |
 
@@ -152,19 +152,25 @@ Day 3 结果：[[Training Logs/2026-08-10 Day 3 Sune Recognition|训练日志]]
 - Ua、Ub 各连续 5 次无转错。
 - 不确定 case 时不猜，记录“未识别”并正常完成。
 
+Day 4 结果：[[Training Logs/2026-08-12 Day 4 Ua Ub Recognition|训练日志]]
+
 ## Day 5：F2L 慢拧与少转体（40 分钟）
 
 ### 内容
 
-1. 热身 5 分钟：4 次 Cross + 第一组 F2L。
-2. 专项 20 分钟：重复 Day 2 的 F2L 打乱 3-8；每次最多允许 2 次整体转体。
-3. 慢拧 10 分钟：节奏保持均匀，宁可慢也不要停。
-4. 记录 5 分钟：写下最常见的 3 种 F2L 卡住情形。
+1. 热身 5 分钟：Sune、Anti-Sune、Ua、Ub 各复习 1 次，再做 1 次 Cross + 第一组 F2L。
+2. 专项 20 分钟：使用下面 6 个 F2L 打乱，每次最多允许 2 次整体转体；先完成 6 次。
+3. 完整慢拧 10 分钟：使用 csTimer 普通 3×3×3 随机打乱再做 4 次，共计 10 次；节奏保持均匀，宁可慢也不要停。
+4. 记录 5 分钟：统计 10 次中转体不超过 2 次的数量，并写下最常见的 3 种 F2L 卡住情形。
 
-### 补充 F2L 打乱
+### F2L 专项打乱
 
-7. `F' U2 B' U2 F2 U2 L2 F' L2 F2 U F2 R' U2 F' U R U2 B2`
-8. `U' B U2 B L2 B' L2 B R2 B2 U2 R U2 R F U R F'`
+1. `L2 U' L' U B2 U2 B L' F2 U2 B' R2 B' U2 L2 B' R2 B' D2 U`
+2. `D2 L U2 F2 R U2 L' D2 B2 L2 B R U' L' R' U' B' L2`
+3. `F' U' B2 D2 L B2 L2 R D2 R' D2 F L U L F2 L2 F2`
+4. `F' L' U' L' F' D2 R' F' D2 L2 F2 U2 L2 B' R2 F' R2 B2 L2`
+5. `F' U2 B' U2 F2 U2 L2 F' L2 F2 U F2 R' U2 F' U R U2 B2`
+6. `U' B U2 B L2 B' L2 B R2 B2 U2 R U2 R F U R F'`
 
 ### 完成标准
 

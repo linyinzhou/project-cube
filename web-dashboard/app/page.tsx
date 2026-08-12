@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { FormulaLibrary } from "../src/components/FormulaLibrary";
-import { TargetedCaseList } from "../src/components/InteractiveFormulaList";
+import { InteractiveFormulaList } from "../src/components/InteractiveFormulaList";
 
 const phases = [
   { name: "Cross", time: 8.26, target: 4, tone: "blue", note: "偶尔可进 6 秒，稳定性不足" },
@@ -22,25 +22,21 @@ const solves = [
   { no: 8, total: "54.91", cross: "6.50", f2l: "27.63", oll: "4.93", pll: "15.84" },
 ] as const;
 
-const dayFourTargetCases = [
-  {
-    name: "Ua · 顺时针棱循环",
-    setup: "R2 U R U R' U' R' U' R' U R'",
-    algorithm: "R U' R U R U R U' R' U' R2",
-  },
-  {
-    name: "Ub · 逆时针棱循环",
-    setup: "R U' R U R U R U' R' U' R2",
-    algorithm: "R2 U R U R' U' R' U' R' U R'",
-  },
+const dayFiveF2LScrambles = [
+  "L2 U' L' U B2 U2 B L' F2 U2 B' R2 B' U2 L2 B' R2 B' D2 U",
+  "D2 L U2 F2 R U2 L' D2 B2 L2 B R U' L' R' U' B' L2",
+  "F' U' B2 D2 L B2 L2 R D2 R' D2 F L U L F2 L2 F2",
+  "F' L' U' L' F' D2 R' F' D2 L2 F2 U2 L2 B' R2 F' R2 B2 L2",
+  "F' U2 B' U2 F2 U2 L2 F' L2 F2 U F2 R' U2 F' U R U2 B2",
+  "U' B U2 B L2 B' L2 B R2 B2 U2 R U2 R F U R F'",
 ] as const;
 
 const plan = [
   { day: "Day 1", focus: "基线与技能清单", state: "完成", status: "done" },
   { day: "Day 2", focus: "直觉 F2L 配对", state: "完成 · 18/20", status: "done" },
   { day: "Day 3", focus: "2-look OLL 入门", state: "完成 · 9/10", status: "done" },
-  { day: "Day 4", focus: "2-look PLL 入门", state: "下一次", status: "current" },
-  { day: "Day 5", focus: "F2L 慢拧与少转体", state: "未开始", status: "pending" },
+  { day: "Day 4", focus: "2-look PLL 入门", state: "完成 · 10/10", status: "done" },
+  { day: "Day 5", focus: "F2L 慢拧与少转体", state: "下一次", status: "current" },
   { day: "Day 6", focus: "整合与周期测试", state: "未开始", status: "pending" },
   { day: "Day 7", focus: "恢复与周期复盘", state: "未开始", status: "pending" },
 ] as const;
@@ -67,7 +63,7 @@ export default function Home() {
         </div>
         <div className="top-status">
           <span className="status-dot" />
-          <span>第 1 周期 · Day 4 待训练</span>
+          <span>第 1 周期 · Day 5 待训练</span>
         </div>
       </header>
 
@@ -78,7 +74,7 @@ export default function Home() {
               <p className="eyebrow">OVERVIEW</p>
               <h2 id="overview-title">从 58.04 秒到稳定 Sub-30</h2>
             </div>
-            <p className="updated">更新于 2026-08-10</p>
+            <p className="updated">更新于 2026-08-12</p>
           </div>
 
           <div className="metric-grid">
@@ -136,19 +132,19 @@ export default function Home() {
         <section className="next-session" aria-labelledby="next-title">
           <div className="next-copy">
             <p className="eyebrow">NEXT SESSION · 40 MIN</p>
-            <h2 id="next-title">Day 4 · 2-look PLL 入门</h2>
-            <p className="session-intro">Day 3 已完成。今天先快速复习小鱼，再学习 Ua 与 Ub；重点观察顶层棱块的循环方向，不追求完整还原时间。</p>
+            <h2 id="next-title">Day 5 · F2L 慢拧与少转体</h2>
+            <p className="session-intro">Day 4 的 Ua / Ub 识别与执行全部正确。今天不学新公式，回到当前最大瓶颈 F2L：减少整体转体，并让观察与转动保持连续。</p>
             <ol className="session-steps">
-              <li><span>08</span><div><strong>手法热身</strong><p>小鱼、反小鱼各复习 1 次，再将 Ua、Ub 各慢做 5 次。</p></div></li>
-              <li><span>10</span><div><strong>循环方向识别</strong><p>先找已完成的一面，再判断顶层棱块应顺时针还是逆时针循环。</p></div></li>
-              <li><span>17</span><div><strong>Ua / Ub 定向专项</strong><p>两个 case 各做 5 次；先执行 Setup，判断后再用对应公式还原。</p></div></li>
-              <li><span>05</span><div><strong>完整慢拧</strong><p>完成 3 次，只记录 PLL 是否识别正确，不追求时间。</p></div></li>
+              <li><span>05</span><div><strong>复习与热身</strong><p>四个已学公式各做 1 次，再做 1 次 Cross + 第一组 F2L。</p></div></li>
+              <li><span>20</span><div><strong>少转体专项</strong><p>使用右侧 6 条打乱，每次完整 F2L 最多允许 2 次整体转体。</p></div></li>
+              <li><span>10</span><div><strong>完整慢拧</strong><p>csTimer 普通 3×3×3 随机打乱 4 次；保持均匀节奏，不追求时间。</p></div></li>
+              <li><span>05</span><div><strong>记录卡点</strong><p>统计 10 次达标数，并写下 3 个具体卡点，例如找不到棱块或配对后丢失。</p></div></li>
             </ol>
-            <div className="success-rule"><strong>完成标准</strong><span>Ua、Ub 均能正确识别，并各连续 5 次无转错；不确定时不猜。</span></div>
+            <div className="success-rule"><strong>完成标准</strong><span>10 次中至少 7 次整体转体不超过 2 次，并能描述 3 个具体 F2L 卡点。</span></div>
           </div>
           <div className="scramble-panel">
-            <div className="panel-heading"><h3>Ua / Ub 定向专项</h3><span>2 cases</span></div>
-            <TargetedCaseList items={dayFourTargetCases} />
+            <div className="panel-heading"><h3>F2L 少转体打乱</h3><span>6 scrambles</span></div>
+            <InteractiveFormulaList items={dayFiveF2LScrambles} />
           </div>
         </section></>}
 
@@ -157,10 +153,10 @@ export default function Home() {
             <div><strong>14</strong><span>自然日</span></div>
             <div><strong>7</strong><span>训练日</span></div>
             <div><strong>≈4h</strong><span>周期训练量</span></div>
-            <div><strong>3 / 7</strong><span>当前完成</span></div>
+            <div><strong>4 / 7</strong><span>当前完成</span></div>
           </div>
           <div className="plan-section">
-            <div className="section-heading"><div><p className="eyebrow">TRAINING CYCLE</p><h2 id="plan-title">第 1 训练周期</h2></div><span className="cycle-count">3 / 7</span></div>
+            <div className="section-heading"><div><p className="eyebrow">TRAINING CYCLE</p><h2 id="plan-title">第 1 训练周期</h2></div><span className="cycle-count">4 / 7</span></div>
             <p className="muted">隔天一练，约 14 个自然日完成。不补课，未完成任务顺延。</p>
             <div className="plan-list">
               {plan.map((item, index) => (

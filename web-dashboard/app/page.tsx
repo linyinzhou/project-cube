@@ -136,9 +136,9 @@ export default function Home() {
             <p className="session-intro">Day 4 的 Ua / Ub 识别与执行全部正确。今天不学新公式，回到当前最大瓶颈 F2L：减少整体转体，并让观察与转动保持连续。</p>
             <ol className="session-steps">
               <li><span>05</span><div><strong>复习与热身</strong><p>四个已学公式各做 1 次，再做 1 次 Cross + 第一组 F2L。</p></div></li>
-              <li><span>20</span><div><strong>少转体专项</strong><p>使用右侧 6 条打乱，每次完整 F2L 最多允许 2 次整体转体。</p></div></li>
-              <li><span>10</span><div><strong>完整慢拧</strong><p>csTimer 普通 3×3×3 随机打乱 4 次；保持均匀节奏，不追求时间。</p></div></li>
-              <li><span>05</span><div><strong>记录卡点</strong><p>统计 10 次达标数，并写下 3 个具体卡点，例如找不到棱块或配对后丢失。</p></div></li>
+              <li><span>20</span><div><strong>少转体专项 · 第 1–6 次</strong><p>使用右侧 6 条打乱，各完成一次 Cross + 全部 F2L；每次整体转体最多 2 次。</p></div></li>
+              <li><span>10</span><div><strong>完整慢拧 · 第 7–10 次</strong><p>使用 csTimer 普通 3×3×3 随机打乱完成 4 次；每次也统计 F2L 转体，保持均匀节奏。</p></div></li>
+              <li><span>05</span><div><strong>汇总记录</strong><p>汇总前两项共 10 次 F2L 的达标数，不再额外还原；再写下 3 个具体卡点。</p></div></li>
             </ol>
             <div className="success-rule"><strong>完成标准</strong><span>10 次中至少 7 次整体转体不超过 2 次，并能描述 3 个具体 F2L 卡点。</span></div>
           </div>

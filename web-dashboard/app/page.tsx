@@ -22,13 +22,19 @@ const solves = [
   { no: 8, total: "54.91", cross: "6.50", f2l: "27.63", oll: "4.93", pll: "15.84" },
 ] as const;
 
-const dayFiveF2LScrambles = [
-  "L2 U' L' U B2 U2 B L' F2 U2 B' R2 B' U2 L2 B' R2 B' D2 U",
-  "D2 L U2 F2 R U2 L' D2 B2 L2 B R U' L' R' U' B' L2",
-  "F' U' B2 D2 L B2 L2 R D2 R' D2 F L U L F2 L2 F2",
-  "F' L' U' L' F' D2 R' F' D2 L2 F2 U2 L2 B' R2 F' R2 B2 L2",
-  "F' U2 B' U2 F2 U2 L2 F' L2 F2 U F2 R' U2 F' U R U2 B2",
-  "U' B U2 B L2 B' L2 B R2 B2 U2 R U2 R F U R F'",
+const daySixTestScrambles = [
+  "R2 B D L B' L2 F L' D F2 R' D2 R' D2 R U2 R F2 U2 R2 B2",
+  "R' F R' B2 U2 B' U R2 F' D2 R2 U2 B U2 D2 B' R2 F U2 R F2",
+  "R F2 B' D' F B' D' B L F2 L2 B2 D' F2 U2 D R2 D2 L2 F2 B'",
+  "B2 U' R L D B U L R2 U B2 R2 L2 D L2 U D2 F2 D2 R2 L'",
+  "F D F2 U2 R L B' D L F' R2 D2 L2 U2 F2 R2 F' U2 L2 B L2",
+  "B U L U B D' B' R' U' D' R2 U' R2 B2 U' B2 L2 D2 F2 R' U",
+  "L F U' R U R' U' F D2 F2 B2 R D2 R' B2 R2 U2 B2 L F U",
+  "L' R2 F2 D2 B2 U F2 D' B2 L2 D L2 F' L U2 B' D B2 L",
+  "R F U B R2 U2 L' F U' R2 U R2 B2 L2 U' F2 D B2 U F'",
+  "U2 F' U2 F' D2 L2 U2 F2 R2 F' U2 R' D' F' D F2 R2 U'",
+  "F2 D2 R2 F R' F' D F' D2 B' D2 L2 F2 U' L2 F2 D R2 U'",
+  "B2 L' D2 R' B2 U R F R2 B' R2 D2 F U2 B R2 B' U2 B' D",
 ] as const;
 
 const plan = [
@@ -36,8 +42,8 @@ const plan = [
   { day: "Day 2", focus: "直觉 F2L 配对", state: "完成 · 18/20", status: "done" },
   { day: "Day 3", focus: "2-look OLL 入门", state: "完成 · 9/10", status: "done" },
   { day: "Day 4", focus: "2-look PLL 入门", state: "完成 · 10/10", status: "done" },
-  { day: "Day 5", focus: "F2L 慢拧与少转体", state: "下一次", status: "current" },
-  { day: "Day 6", focus: "整合与周期测试", state: "未开始", status: "pending" },
+  { day: "Day 5", focus: "F2L 慢拧与少转体", state: "完成 · 7/10", status: "done" },
+  { day: "Day 6", focus: "整合与周期测试", state: "下一次", status: "current" },
   { day: "Day 7", focus: "恢复与周期复盘", state: "未开始", status: "pending" },
 ] as const;
 
@@ -63,7 +69,7 @@ export default function Home() {
         </div>
         <div className="top-status">
           <span className="status-dot" />
-          <span>第 1 周期 · Day 5 待训练</span>
+          <span>第 1 周期 · Day 6 周测待训练</span>
         </div>
       </header>
 
@@ -74,7 +80,7 @@ export default function Home() {
               <p className="eyebrow">OVERVIEW</p>
               <h2 id="overview-title">从 58.04 秒到稳定 Sub-30</h2>
             </div>
-            <p className="updated">更新于 2026-08-12</p>
+            <p className="updated">更新于 2026-08-15</p>
           </div>
 
           <div className="metric-grid">
@@ -131,20 +137,20 @@ export default function Home() {
 
         <section className="next-session" aria-labelledby="next-title">
           <div className="next-copy">
-            <p className="eyebrow">NEXT SESSION · 40 MIN</p>
-            <h2 id="next-title">Day 5 · F2L 慢拧与少转体</h2>
-            <p className="session-intro">Day 4 的 Ua / Ub 识别与执行全部正确。今天不学新公式，回到当前最大瓶颈 F2L：减少整体转体，并让观察与转动保持连续。</p>
+            <p className="eyebrow">NEXT SESSION · 50 MIN</p>
+            <h2 id="next-title">Day 6 · 整合与周期周测</h2>
+            <p className="session-intro">Day 5 少转体刚好达到 7/10。今天不刻意压慢或修正动作，按正常速度完成 12 次计时，用结果判断 F2L 卡点是否仍是主要瓶颈。</p>
             <ol className="session-steps">
-              <li><span>05</span><div><strong>复习与热身</strong><p>四个已学公式各做 1 次，再做 1 次 Cross + 第一组 F2L。</p></div></li>
-              <li><span>20</span><div><strong>少转体专项 · 第 1–6 次</strong><p>使用右侧 6 条打乱，各完成一次 Cross + 全部 F2L；每次整体转体最多 2 次。</p></div></li>
-              <li><span>10</span><div><strong>完整慢拧 · 第 7–10 次</strong><p>使用 csTimer 普通 3×3×3 随机打乱完成 4 次；每次也统计 F2L 转体，保持均匀节奏。</p></div></li>
-              <li><span>05</span><div><strong>汇总记录</strong><p>汇总前两项共 10 次 F2L 的达标数，不再额外还原；再写下 3 个具体卡点。</p></div></li>
+              <li><span>05</span><div><strong>热身</strong><p>完成 2 次不计时慢拧，找到正常手感即可。</p></div></li>
+              <li><span>10</span><div><strong>公式复习</strong><p>Sune、Anti-Sune、Ua、Ub 各做 5 次；不追求极限手速。</p></div></li>
+              <li><span>25</span><div><strong>12 次周测</strong><p>按右侧固定顺序在 csTimer 正常计时，所有成绩保留，不因为失误重来。</p></div></li>
+              <li><span>10</span><div><strong>结果复盘</strong><p>记录 12 次成绩、ao5、ao12、失误数，以及每次最大停顿属于 Cross、F2L、OLL 或 PLL。</p></div></li>
             </ol>
-            <div className="success-rule"><strong>完成标准</strong><span>10 次中至少 7 次整体转体不超过 2 次，并能描述 3 个具体 F2L 卡点。</span></div>
+            <div className="success-rule"><strong>完成标准</strong><span>12 次成绩全部保留；至少一次在完整还原中正确使用本周复习公式。</span></div>
           </div>
           <div className="scramble-panel">
-            <div className="panel-heading"><h3>F2L 少转体打乱</h3><span>6 scrambles</span></div>
-            <InteractiveFormulaList items={dayFiveF2LScrambles} />
+            <div className="panel-heading"><h3>Day 6 周测打乱</h3><span>12 WCA scrambles</span></div>
+            <InteractiveFormulaList items={daySixTestScrambles} />
           </div>
         </section></>}
 
@@ -153,10 +159,10 @@ export default function Home() {
             <div><strong>14</strong><span>自然日</span></div>
             <div><strong>7</strong><span>训练日</span></div>
             <div><strong>≈4h</strong><span>周期训练量</span></div>
-            <div><strong>4 / 7</strong><span>当前完成</span></div>
+            <div><strong>5 / 7</strong><span>当前完成</span></div>
           </div>
           <div className="plan-section">
-            <div className="section-heading"><div><p className="eyebrow">TRAINING CYCLE</p><h2 id="plan-title">第 1 训练周期</h2></div><span className="cycle-count">4 / 7</span></div>
+            <div className="section-heading"><div><p className="eyebrow">TRAINING CYCLE</p><h2 id="plan-title">第 1 训练周期</h2></div><span className="cycle-count">5 / 7</span></div>
             <p className="muted">隔天一练，约 14 个自然日完成。不补课，未完成任务顺延。</p>
             <div className="plan-list">
               {plan.map((item, index) => (

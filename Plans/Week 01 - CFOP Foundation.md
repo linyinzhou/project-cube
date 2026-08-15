@@ -9,7 +9,7 @@ starting_average_seconds: 50
 planned_minutes: 240
 calendar_days: 14
 training_cadence: every-other-day
-current_progress: "Day 1-4 completed; Day 5 pending"
+current_progress: "Day 1-5 completed; Day 6 pending"
 ---
 
 # 第 1 周：CFOP 基础与瓶颈定位
@@ -24,8 +24,8 @@ current_progress: "Day 1-4 completed; Day 5 pending"
 | 第 5 天 | Day 2：直觉 F2L 配对 | 已完成（18 / 20） |
 | 第 7 天 | Day 3：2-look OLL 入门 | 已完成（F2L 5 / 5，公式 9 / 10） |
 | 第 9 天 | Day 4：2-look PLL 入门 | 已完成（公式 10 / 10，识别 3 / 3） |
-| 第 11 天 | Day 5：F2L 慢拧与少转体 | 下一次 |
-| 第 13 天 | Day 6：整合与周期测试 | 未开始 |
+| 第 11 天 | Day 5：F2L 慢拧与少转体 | 已完成（少转体 7 / 10） |
+| 第 13 天 | Day 6：整合与周期测试 | 下一次 |
 | 第 14 天 | Day 7：恢复与周期复盘 | 未开始 |
 
 ## 本周目标
@@ -180,14 +180,31 @@ Day 4 结果：[[Training Logs/2026-08-12 Day 4 Ua Ub Recognition|训练日志]]
 - 10 次慢拧中至少 7 次整体转体不超过 2 次。
 - 能明确描述 3 个具体卡点，而不是只写“F2L 慢”。
 
+Day 5 结果：[[Training Logs/2026-08-15 Day 5 F2L Rotation Control|训练日志]]
+
 ## Day 6：整合与周测（50 分钟）
 
 ### 内容
 
 1. 热身 5 分钟：2 次慢拧。
 2. 公式复习 10 分钟：Sune、Anti-Sune、Ua、Ub 各 5 次。
-3. 周测 25 分钟：在 csTimer 使用 12 个全新 WCA 三阶打乱，正常计时。
+3. 周测 25 分钟：在 csTimer 使用下面 12 个固定 WCA 三阶打乱，正常计时。
 4. 复盘 10 分钟：记录 ao5、ao12、失误数，以及每次最大停顿阶段。
+
+### 周测打乱
+
+1. `R2 B D L B' L2 F L' D F2 R' D2 R' D2 R U2 R F2 U2 R2 B2`
+2. `R' F R' B2 U2 B' U R2 F' D2 R2 U2 B U2 D2 B' R2 F U2 R F2`
+3. `R F2 B' D' F B' D' B L F2 L2 B2 D' F2 U2 D R2 D2 L2 F2 B'`
+4. `B2 U' R L D B U L R2 U B2 R2 L2 D L2 U D2 F2 D2 R2 L'`
+5. `F D F2 U2 R L B' D L F' R2 D2 L2 U2 F2 R2 F' U2 L2 B L2`
+6. `B U L U B D' B' R' U' D' R2 U' R2 B2 U' B2 L2 D2 F2 R' U`
+7. `L F U' R U R' U' F D2 F2 B2 R D2 R' B2 R2 U2 B2 L F U`
+8. `L' R2 F2 D2 B2 U F2 D' B2 L2 D L2 F' L U2 B' D B2 L`
+9. `R F U B R2 U2 L' F U' R2 U R2 B2 L2 U' F2 D B2 U F'`
+10. `U2 F' U2 F' D2 L2 U2 F2 R2 F' U2 R' D' F' D F2 R2 U'`
+11. `F2 D2 R2 F R' F' D F' D2 B' D2 L2 F2 U' L2 F2 D R2 U'`
+12. `B2 L' D2 R' B2 U R F R2 B' R2 D2 F U2 B R2 B' U2 B' D`
 
 ### 完成标准
 

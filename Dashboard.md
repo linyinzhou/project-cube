@@ -7,7 +7,7 @@ status: active
 current_method: CFOP
 method_status: under-evaluation
 training_cadence: every-other-day
-current_session: "Week 01 / Day 5 pending"
+current_session: "Week 01 / Day 6 pending"
 target_seconds: 30
 target_date: 2027-02-05
 ---
@@ -22,7 +22,7 @@ target_date: 2027-02-05
 - 当前水平：Day 1 平均 58.04 秒，ao5 56.49 秒，best 39.82 秒
 - 当前阶段：CFOP 基础与基线测评
 - 当前方法：CFOP（作为起点，不锁定）
-- 当前进度：第 1 训练周期，Day 1-4 已完成，下一次执行 Day 5
+- 当前进度：第 1 训练周期，Day 1-5 已完成，下一次执行 Day 6 周测
 - 训练节奏：隔天一练，原一周计划用约 14 天完成
 - 调整方式：每次训练后根据日志决定继续、重复、降难度或进阶
 - 本周主要短板：F2L 寻块、配对和稳定性
@@ -37,7 +37,8 @@ target_date: 2027-02-05
 - [x] 完成 [[Training Logs/2026-08-08 Day 2 Intuitive F2L|Day 2 直觉 F2L 配对]]（18 / 20，接近达标）
 - [x] 完成 [[Training Logs/2026-08-10 Day 3 Sune Recognition|Day 3 小鱼与反小鱼识别]]（F2L 5 / 5，公式 9 / 10）
 - [x] 完成 [[Training Logs/2026-08-12 Day 4 Ua Ub Recognition|Day 4 Ua 与 Ub 识别]]（公式 10 / 10，完整慢拧识别 3 / 3）
-- [ ] 完成 [[Plans/Week 01 - CFOP Foundation#Day 5：F2L 慢拧与少转体（40 分钟）|Day 5 F2L 慢拧与少转体]]
+- [x] 完成 [[Training Logs/2026-08-15 Day 5 F2L Rotation Control|Day 5 F2L 慢拧与少转体]]（少转体 7 / 10）
+- [ ] 完成 [[Plans/Week 01 - CFOP Foundation#Day 6：整合与周测（50 分钟）|Day 6 整合与周测]]
 - [ ] 按隔日节奏执行 [[Plans/Week 01 - CFOP Foundation|第 1 训练周期计划]]
 - [ ] 根据首周结果确定第一个四周训练块
 - [ ] 第 4 周完成 [[Assessments/Method Evaluation|速拧方法评估]]
@@ -81,6 +82,9 @@ target_date: 2027-02-05
 
 > [!success] Day 4 完整达标
 > Ua、Ub 正确辨认，专项公式 10 / 10，3 次完整慢拧的 PLL 识别全部正确。下一次回到主要瓶颈 F2L。
+
+> [!info] Day 5 达到最低标准
+> 少转体达标 7 / 10。主要卡点为找不到对应棱块、完成一组后的衔接停顿，以及用整体转体补偿观察。Day 6 按原计划周测。
 
 | 指标 | 当前值 | 阶段目标 |
 | --- | ---: | ---: |

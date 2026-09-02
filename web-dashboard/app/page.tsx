@@ -2,13 +2,12 @@
 
 import { useState } from "react";
 import { FormulaLibrary } from "../src/components/FormulaLibrary";
-import { InteractiveFormulaList } from "../src/components/InteractiveFormulaList";
 
 const phases = [
-  { name: "Cross", time: 8.26, target: 4, tone: "blue", note: "偶尔可进 6 秒，稳定性不足" },
-  { name: "F2L", time: 28.86, target: 17, tone: "red", note: "首要瓶颈：寻块、配对与停顿" },
-  { name: "OLL", time: 8.67, target: 4, tone: "yellow", note: "先建立形状识别" },
-  { name: "PLL", time: 12.23, target: 3, tone: "green", note: "识别和执行需要稳定" },
+  { name: "Cross", time: 8.49, target: 4, tone: "blue", note: "与 Day 1 基本持平，稳定性仍不足" },
+  { name: "F2L", time: 26.46, target: 17, tone: "red", note: "比 Day 1 改善 2.40 秒，但仍是最大停顿阶段" },
+  { name: "OLL", time: 8.44, target: 4, tone: "yellow", note: "公式识别已建立，继续保留复习" },
+  { name: "PLL", time: 11.71, target: 3, tone: "green", note: "Ua / Ub 已掌握，暂不扩大公式量" },
 ] as const;
 
 const solves = [
@@ -22,29 +21,14 @@ const solves = [
   { no: 8, total: "54.91", cross: "6.50", f2l: "27.63", oll: "4.93", pll: "15.84" },
 ] as const;
 
-const daySixTestScrambles = [
-  "R2 B D L B' L2 F L' D F2 R' D2 R' D2 R U2 R F2 U2 R2 B2",
-  "R' F R' B2 U2 B' U R2 F' D2 R2 U2 B U2 D2 B' R2 F U2 R F2",
-  "R F2 B' D' F B' D' B L F2 L2 B2 D' F2 U2 D R2 D2 L2 F2 B'",
-  "B2 U' R L D B U L R2 U B2 R2 L2 D L2 U D2 F2 D2 R2 L'",
-  "F D F2 U2 R L B' D L F' R2 D2 L2 U2 F2 R2 F' U2 L2 B L2",
-  "B U L U B D' B' R' U' D' R2 U' R2 B2 U' B2 L2 D2 F2 R' U",
-  "L F U' R U R' U' F D2 F2 B2 R D2 R' B2 R2 U2 B2 L F U",
-  "L' R2 F2 D2 B2 U F2 D' B2 L2 D L2 F' L U2 B' D B2 L",
-  "R F U B R2 U2 L' F U' R2 U R2 B2 L2 U' F2 D B2 U F'",
-  "U2 F' U2 F' D2 L2 U2 F2 R2 F' U2 R' D' F' D F2 R2 U'",
-  "F2 D2 R2 F R' F' D F' D2 B' D2 L2 F2 U' L2 F2 D R2 U'",
-  "B2 L' D2 R' B2 U R F R2 B' R2 D2 F U2 B R2 B' U2 B' D",
-] as const;
-
 const plan = [
   { day: "Day 1", focus: "基线与技能清单", state: "完成", status: "done" },
   { day: "Day 2", focus: "直觉 F2L 配对", state: "完成 · 18/20", status: "done" },
   { day: "Day 3", focus: "2-look OLL 入门", state: "完成 · 9/10", status: "done" },
   { day: "Day 4", focus: "2-look PLL 入门", state: "完成 · 10/10", status: "done" },
   { day: "Day 5", focus: "F2L 慢拧与少转体", state: "完成 · 7/10", status: "done" },
-  { day: "Day 6", focus: "整合与周期测试", state: "下一次", status: "current" },
-  { day: "Day 7", focus: "恢复与周期复盘", state: "未开始", status: "pending" },
+  { day: "Day 6", focus: "整合与周期测试", state: "完成 · ao12 55.70", status: "done" },
+  { day: "Day 7", focus: "恢复与周期复盘", state: "下一次", status: "current" },
 ] as const;
 
 const milestones = [
@@ -69,7 +53,7 @@ export default function Home() {
         </div>
         <div className="top-status">
           <span className="status-dot" />
-          <span>第 1 周期 · Day 6 周测待训练</span>
+          <span>第 1 周期 · Day 7 待复盘</span>
         </div>
       </header>
 
@@ -78,17 +62,17 @@ export default function Home() {
           <div className="section-heading">
             <div>
               <p className="eyebrow">OVERVIEW</p>
-              <h2 id="overview-title">从 58.04 秒到稳定 Sub-30</h2>
+              <h2 id="overview-title">从 56.40 秒到稳定 Sub-30</h2>
             </div>
-            <p className="updated">更新于 2026-08-15</p>
+            <p className="updated">更新于 2026-09-02</p>
           </div>
 
           <div className="metric-grid">
             <article className="metric primary">
-              <p>当前平均</p><strong>58.04<span>s</span></strong><small>Day 1 · 8 次有效还原</small>
+              <p>当前平均</p><strong>56.40<span>s</span></strong><small>Day 6 · 12 次周测</small>
             </article>
             <article className="metric">
-              <p>ao5</p><strong>56.49<span>s</span></strong><small>当前基线</small>
+              <p>ao5</p><strong>58.92<span>s</span></strong><small>Day 6 当前 ao5</small>
             </article>
             <article className="metric best">
               <p>最佳单次</p><strong>39.82<span>s</span></strong><small>F2L 仅 14.84 秒</small>
@@ -98,8 +82,8 @@ export default function Home() {
             </article>
           </div>
 
-          <div className="goal-track" aria-label="当前平均 58.04 秒，目标 30 秒">
-            <div className="track-labels"><span>当前 58.04s</span><span>阶段目标 50s</span><span>目标 30s</span></div>
+          <div className="goal-track" aria-label="当前平均 56.40 秒，目标 30 秒">
+            <div className="track-labels"><span>当前 56.40s</span><span>阶段目标 50s</span><span>目标 30s</span></div>
             <div className="track"><span className="current-marker" /><span className="stage-marker" /></div>
             <p>当前先稳定进入 Sub-50，不追逐偶然的快单次。</p>
           </div>
@@ -118,10 +102,10 @@ export default function Home() {
             <span className="priority-tag">本周期重点 · F2L</span>
           </div>
           <div className="phase-composition" aria-label="分段时间占比">
-            <span className="cross" style={{ width: "14.2%" }}>Cross</span>
-            <span className="f2l" style={{ width: "49.7%" }}>F2L</span>
-            <span className="oll" style={{ width: "14.9%" }}>OLL</span>
-            <span className="pll" style={{ width: "21.2%" }}>PLL</span>
+            <span className="cross" style={{ width: "15.4%" }}>Cross</span>
+            <span className="f2l" style={{ width: "48.0%" }}>F2L</span>
+            <span className="oll" style={{ width: "15.3%" }}>OLL</span>
+            <span className="pll" style={{ width: "21.3%" }}>PLL</span>
           </div>
           <div className="phase-list">
             {phases.map((phase) => (
@@ -137,20 +121,31 @@ export default function Home() {
 
         <section className="next-session" aria-labelledby="next-title">
           <div className="next-copy">
-            <p className="eyebrow">NEXT SESSION · 50 MIN</p>
-            <h2 id="next-title">Day 6 · 整合与周期周测</h2>
-            <p className="session-intro">Day 5 少转体刚好达到 7/10。今天不刻意压慢或修正动作，按正常速度完成 12 次计时，用结果判断 F2L 卡点是否仍是主要瓶颈。</p>
+            <p className="eyebrow">NEXT SESSION · 20 MIN</p>
+            <h2 id="next-title">Day 7 · 恢复与周期复盘</h2>
+            <p className="session-intro">Day 6 周测已完成。今天不做计时训练，整理第一周期的证据：公式学习有效，但 F2L 找棱块、衔接停顿和转体仍限制稳定性。</p>
             <ol className="session-steps">
-              <li><span>05</span><div><strong>热身</strong><p>完成 2 次不计时慢拧，找到正常手感即可。</p></div></li>
-              <li><span>10</span><div><strong>公式复习</strong><p>Sune、Anti-Sune、Ua、Ub 各做 5 次；不追求极限手速。</p></div></li>
-              <li><span>25</span><div><strong>12 次周测</strong><p>按右侧固定顺序在 csTimer 正常计时，所有成绩保留，不因为失误重来。</p></div></li>
-              <li><span>10</span><div><strong>结果复盘</strong><p>记录 12 次成绩、ao5、ao12、失误数，以及每次最大停顿属于 Cross、F2L、OLL 或 PLL。</p></div></li>
+              <li><span>05</span><div><strong>闭眼回忆</strong><p>不拿魔方，写出 Sune、Anti-Sune、Ua、Ub；想不起来的标记出来，不猜。</p></div></li>
+              <li><span>05</span><div><strong>轻松复习</strong><p>四个公式各做 3 次，不计时；只修正遗忘或转错的部分。</p></div></li>
+              <li><span>10</span><div><strong>周期复盘</strong><p>回答右侧 3 个问题，确定下一周期唯一主线和一个保留项。</p></div></li>
             </ol>
-            <div className="success-rule"><strong>完成标准</strong><span>12 次成绩全部保留；至少一次在完整还原中正确使用本周复习公式。</span></div>
+            <div className="success-rule"><strong>完成标准</strong><span>完成 3 个复盘问题；下一周期主线暂定 F2L 观察与衔接，公式只做保留复习。</span></div>
           </div>
-          <div className="scramble-panel">
-            <div className="panel-heading"><h3>Day 6 周测打乱</h3><span>12 WCA scrambles</span></div>
-            <InteractiveFormulaList items={daySixTestScrambles} />
+          <div className="scramble-panel review-panel">
+            <div className="panel-heading"><h3>第一周期结果</h3><span>Day 6 · 12 solves</span></div>
+            <div className="review-stat-grid">
+              <div><span>原始平均</span><strong>56.40s</strong></div>
+              <div><span>ao12</span><strong>55.70s</strong></div>
+              <div><span>ao5</span><strong>58.92s</strong></div>
+              <div><span>最快</span><strong>43.62s</strong></div>
+            </div>
+            <div className="panel-heading panel-subheading"><h3>复盘问题</h3><span>3 questions</span></div>
+            <ol className="review-prompts">
+              <li><span>1</span><p>四个公式中，哪个最容易遗忘或转错？</p></li>
+              <li><span>2</span><p>F2L 的 B、E、F 三类卡点中，哪一个最影响节奏？</p></li>
+              <li><span>3</span><p>这一周期的训练量是否合适：偏少、合适，还是偏多？</p></li>
+            </ol>
+            <p className="review-warning">第 6 次分段误触，仅保留总成绩，不计入分段平均。</p>
           </div>
         </section></>}
 
@@ -159,10 +154,10 @@ export default function Home() {
             <div><strong>14</strong><span>自然日</span></div>
             <div><strong>7</strong><span>训练日</span></div>
             <div><strong>≈4h</strong><span>周期训练量</span></div>
-            <div><strong>5 / 7</strong><span>当前完成</span></div>
+            <div><strong>6 / 7</strong><span>当前完成</span></div>
           </div>
           <div className="plan-section">
-            <div className="section-heading"><div><p className="eyebrow">TRAINING CYCLE</p><h2 id="plan-title">第 1 训练周期</h2></div><span className="cycle-count">5 / 7</span></div>
+            <div className="section-heading"><div><p className="eyebrow">TRAINING CYCLE</p><h2 id="plan-title">第 1 训练周期</h2></div><span className="cycle-count">6 / 7</span></div>
             <p className="muted">隔天一练，约 14 个自然日完成。不补课，未完成任务顺延。</p>
             <div className="plan-list">
               {plan.map((item, index) => (

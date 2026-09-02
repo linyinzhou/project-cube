@@ -9,7 +9,7 @@ starting_average_seconds: 50
 planned_minutes: 240
 calendar_days: 14
 training_cadence: every-other-day
-current_progress: "Day 1-5 completed; Day 6 pending"
+current_progress: "Day 1-6 completed; Day 7 pending"
 ---
 
 # 第 1 周：CFOP 基础与瓶颈定位
@@ -25,8 +25,8 @@ current_progress: "Day 1-5 completed; Day 6 pending"
 | 第 7 天 | Day 3：2-look OLL 入门 | 已完成（F2L 5 / 5，公式 9 / 10） |
 | 第 9 天 | Day 4：2-look PLL 入门 | 已完成（公式 10 / 10，识别 3 / 3） |
 | 第 11 天 | Day 5：F2L 慢拧与少转体 | 已完成（少转体 7 / 10） |
-| 第 13 天 | Day 6：整合与周期测试 | 下一次 |
-| 第 14 天 | Day 7：恢复与周期复盘 | 未开始 |
+| 第 13 天 | Day 6：整合与周期测试 | 已完成（ao12 55.70 秒） |
+| 第 14 天 | Day 7：恢复与周期复盘 | 下一次 |
 
 ## 本周目标
 
@@ -211,6 +211,8 @@ Day 5 结果：[[Training Logs/2026-08-15 Day 5 F2L Rotation Control|训练日�
 - 12 次成绩全部保留。
 - 与 Day 1 相比，识别错误和无目的转动有所减少。
 - 至少在完整还原中正确使用一次本周复习公式。
+
+Day 6 结果：[[Training Logs/2026-09-02 Day 6 Weekly Assessment|训练日志]]
 
 ## Day 7：恢复与周复盘（20 分钟）
 

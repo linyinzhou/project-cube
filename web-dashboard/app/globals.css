@@ -89,17 +89,6 @@ h3 { margin: 0; font-size: 16px; letter-spacing: 0; }
 .panel-heading { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; border-bottom: 1px solid var(--line); }
 .panel-subheading { border-top: 1px solid var(--line); }
 .panel-heading span { color: var(--muted); font-size: 12px; }
-.review-stat-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.review-stat-grid div { min-width: 0; padding: 16px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.review-stat-grid div:nth-child(2n) { border-right: 0; }
-.review-stat-grid span, .review-stat-grid strong { display: block; }
-.review-stat-grid span { color: var(--muted); font-size: 11px; }
-.review-stat-grid strong { margin-top: 4px; font-size: 22px; font-variant-numeric: tabular-nums; }
-.review-prompts { margin: 0; padding: 0; list-style: none; }
-.review-prompts li { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 10px; align-items: start; padding: 13px 14px; border-bottom: 1px solid #30363d; }
-.review-prompts li > span { display: grid; place-items: center; width: 24px; height: 24px; border: 1px solid #4c759a; color: #b9dcff; background: #26313c; font-size: 11px; font-weight: 800; }
-.review-prompts p { margin: 2px 0 0; color: #d9dee4; font-size: 13px; line-height: 1.55; }
-.review-warning { margin: 0; padding: 12px 14px; color: #e8c97d; background: #2a261b; font-size: 11px; line-height: 1.5; }
 .scramble-list { margin: 0; padding: 0; list-style: none; }
 .scramble-list li { display: grid; grid-template-columns: 32px minmax(0, 1fr) auto; gap: 10px; align-items: start; padding: 12px 14px; border-bottom: 1px solid #30363d; }
 .scramble-list li:last-child { border-bottom: 0; }

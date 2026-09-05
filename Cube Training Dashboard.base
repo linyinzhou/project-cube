@@ -2,6 +2,7 @@ filters:
   or:
     - 'file.hasTag("cube/training")'
     - 'file.hasTag("cube/plan/weekly")'
+    - 'file.hasTag("cube/review")'
     - 'file.inFolder("Assessments")'
 
 formulas:
@@ -51,12 +52,20 @@ properties:
     displayName: "训练周期"
   current_progress:
     displayName: "当前进度"
+  current_ao12_seconds:
+    displayName: "周期 ao12(s)"
   calendar_days:
     displayName: "周期天数"
   planned_minutes:
     displayName: "计划分钟"
   assessment_date:
     displayName: "测评日期"
+  cycle:
+    displayName: "训练周期"
+  primary_bottleneck:
+    displayName: "主要瓶颈"
+  next_focus:
+    displayName: "下一重点"
 
 views:
   - type: table
@@ -110,3 +119,16 @@ views:
       - file.name
       - status
       - assessment_date
+
+  - type: table
+    name: "周期复盘"
+    filters:
+      and:
+        - 'file.hasTag("cube/review")'
+    order:
+      - date
+      - file.name
+      - cycle
+      - current_ao12_seconds
+      - primary_bottleneck
+      - next_focus

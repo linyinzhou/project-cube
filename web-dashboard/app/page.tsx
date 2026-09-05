@@ -2,6 +2,18 @@
 
 import { useState } from "react";
 import { FormulaLibrary } from "../src/components/FormulaLibrary";
+import { InteractiveFormulaList } from "../src/components/InteractiveFormulaList";
+
+const weekTwoDayOneScrambles = [
+  "L2 D2 L' B' R2 L' B F2 U B2 U D L2 F2 U B2 U B2 R2 B U'",
+  "D B' U R' D L U B U B' L2 B2 D R2 B2 U R2 U2 L2 B2",
+  "L' U2 B U B2 U2 D' L F R2 F L2 F' B2 U2 B' L2 B2 U2 L2 R'",
+  "B2 R' U' F2 L' D F2 L' U R2 F' D2 F2 B' L2 B D2 L2 D2 L2 B'",
+  "U B2 L' F2 R' U F B' L D' F2 D2 F U2 D2 B2 R2 F R2 B'",
+  "D' R' B2 L' U2 D2 R F' U L2 D2 L2 F2 B' L2 F B2 L2 D2 L2 U2",
+  "D' L2 U R2 B2 F2 D' L2 F2 D2 B' R D R' B U2 R2 B",
+  "L2 F' R2 B2 L' U' F' R2 B2 U D2 R2 U' R2 L2 B2 U R2 B U2",
+] as const;
 
 const phases = [
   { name: "Cross", time: 8.49, target: 4, tone: "blue", note: "与 Day 1 基本持平，稳定性仍不足" },
@@ -22,13 +34,13 @@ const solves = [
 ] as const;
 
 const plan = [
-  { day: "Day 1", focus: "基线与技能清单", state: "完成", status: "done" },
-  { day: "Day 2", focus: "直觉 F2L 配对", state: "完成 · 18/20", status: "done" },
-  { day: "Day 3", focus: "2-look OLL 入门", state: "完成 · 9/10", status: "done" },
-  { day: "Day 4", focus: "2-look PLL 入门", state: "完成 · 10/10", status: "done" },
-  { day: "Day 5", focus: "F2L 慢拧与少转体", state: "完成 · 7/10", status: "done" },
-  { day: "Day 6", focus: "整合与周期测试", state: "完成 · ao12 55.70", status: "done" },
-  { day: "Day 7", focus: "恢复与周期复盘", state: "下一次", status: "current" },
+  { day: "Day 1", focus: "转体基线与观察顺序", state: "下一次", status: "current" },
+  { day: "Day 2", focus: "寻找对应棱块", state: "未开始", status: "pending" },
+  { day: "Day 3", focus: "单 pair 无转体解法", state: "未开始", status: "pending" },
+  { day: "Day 4", focus: "pair 间衔接", state: "未开始", status: "pending" },
+  { day: "Day 5", focus: "少转体完整 F2L", state: "未开始", status: "pending" },
+  { day: "Day 6", focus: "第二周期复测", state: "未开始", status: "pending" },
+  { day: "Day 7", focus: "恢复与周期复盘", state: "未开始", status: "pending" },
 ] as const;
 
 const milestones = [
@@ -53,7 +65,7 @@ export default function Home() {
         </div>
         <div className="top-status">
           <span className="status-dot" />
-          <span>第 1 周期 · Day 7 待复盘</span>
+          <span>第 2 周期 · Day 1 待训练</span>
         </div>
       </header>
 
@@ -64,7 +76,7 @@ export default function Home() {
               <p className="eyebrow">OVERVIEW</p>
               <h2 id="overview-title">从 56.40 秒到稳定 Sub-30</h2>
             </div>
-            <p className="updated">更新于 2026-09-02</p>
+            <p className="updated">更新于 2026-09-06</p>
           </div>
 
           <div className="metric-grid">
@@ -121,31 +133,20 @@ export default function Home() {
 
         <section className="next-session" aria-labelledby="next-title">
           <div className="next-copy">
-            <p className="eyebrow">NEXT SESSION · 20 MIN</p>
-            <h2 id="next-title">Day 7 · 恢复与周期复盘</h2>
-            <p className="session-intro">Day 6 周测已完成。今天不做计时训练，整理第一周期的证据：公式学习有效，但 F2L 找棱块、衔接停顿和转体仍限制稳定性。</p>
+            <p className="eyebrow">CYCLE 2 · DAY 1 · 45 MIN</p>
+            <h2 id="next-title">转体基线与固定观察顺序</h2>
+            <p className="session-intro">第一周期 7 / 7 完成。四个公式都能记住，当前唯一主线改为 F2L：固定按“角块 → 对应棱块 → 槽位”观察，并记录每次整体转体发生的位置。</p>
             <ol className="session-steps">
-              <li><span>05</span><div><strong>闭眼回忆</strong><p>不拿魔方，写出 Sune、Anti-Sune、Ua、Ub；想不起来的标记出来，不猜。</p></div></li>
-              <li><span>05</span><div><strong>轻松复习</strong><p>四个公式各做 3 次，不计时；只修正遗忘或转错的部分。</p></div></li>
-              <li><span>10</span><div><strong>周期复盘</strong><p>回答右侧 3 个问题，确定下一周期唯一主线和一个保留项。</p></div></li>
+              <li><span>05</span><div><strong>复习与热身</strong><p>四个已学公式各做 1 次，再做 1 次不计时 Cross。</p></div></li>
+              <li><span>25</span><div><strong>固定打乱专项 · 8 次</strong><p>使用右侧打乱完成 Cross + 全部 F2L；每个 pair 都按固定顺序确认后再转动。</p></div></li>
+              <li><span>10</span><div><strong>随机迁移 · 4 次</strong><p>使用 csTimer 普通 3×3×3 随机打乱，完成 Cross + 全部 F2L，不记录总时间。</p></div></li>
+              <li><span>05</span><div><strong>记录转体</strong><p>记录 12 次的整体转体数，以及转体发生在第几个 pair。</p></div></li>
             </ol>
-            <div className="success-rule"><strong>完成标准</strong><span>完成 3 个复盘问题；下一周期主线暂定 F2L 观察与衔接，公式只做保留复习。</span></div>
+            <div className="success-rule"><strong>完成标准</strong><span>12 次中至少 9 次整体转体不超过 2 次。未达标也保留真实结果，不追加训练。</span></div>
           </div>
-          <div className="scramble-panel review-panel">
-            <div className="panel-heading"><h3>第一周期结果</h3><span>Day 6 · 12 solves</span></div>
-            <div className="review-stat-grid">
-              <div><span>原始平均</span><strong>56.40s</strong></div>
-              <div><span>ao12</span><strong>55.70s</strong></div>
-              <div><span>ao5</span><strong>58.92s</strong></div>
-              <div><span>最快</span><strong>43.62s</strong></div>
-            </div>
-            <div className="panel-heading panel-subheading"><h3>复盘问题</h3><span>3 questions</span></div>
-            <ol className="review-prompts">
-              <li><span>1</span><p>四个公式中，哪个最容易遗忘或转错？</p></li>
-              <li><span>2</span><p>F2L 的 B、E、F 三类卡点中，哪一个最影响节奏？</p></li>
-              <li><span>3</span><p>这一周期的训练量是否合适：偏少、合适，还是偏多？</p></li>
-            </ol>
-            <p className="review-warning">第 6 次分段误触，仅保留总成绩，不计入分段平均。</p>
+          <div className="scramble-panel">
+            <div className="panel-heading"><h3>固定打乱 A</h3><span>8 F2L drills</span></div>
+            <InteractiveFormulaList items={weekTwoDayOneScrambles} />
           </div>
         </section></>}
 
@@ -153,11 +154,11 @@ export default function Home() {
           <div className="cycle-summary">
             <div><strong>14</strong><span>自然日</span></div>
             <div><strong>7</strong><span>训练日</span></div>
-            <div><strong>≈4h</strong><span>周期训练量</span></div>
-            <div><strong>6 / 7</strong><span>当前完成</span></div>
+            <div><strong>≈5h</strong><span>周期训练量</span></div>
+            <div><strong>0 / 7</strong><span>当前完成</span></div>
           </div>
           <div className="plan-section">
-            <div className="section-heading"><div><p className="eyebrow">TRAINING CYCLE</p><h2 id="plan-title">第 1 训练周期</h2></div><span className="cycle-count">6 / 7</span></div>
+            <div className="section-heading"><div><p className="eyebrow">TRAINING CYCLE</p><h2 id="plan-title">第 2 训练周期</h2></div><span className="cycle-count">0 / 7</span></div>
             <p className="muted">隔天一练，约 14 个自然日完成。不补课，未完成任务顺延。</p>
             <div className="plan-list">
               {plan.map((item, index) => (

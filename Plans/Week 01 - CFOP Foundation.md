@@ -4,12 +4,12 @@ tags:
   - cube/plan/weekly
   - cube/cfop
 week: 1
-status: in-progress
+status: completed
 starting_average_seconds: 50
 planned_minutes: 240
 calendar_days: 14
 training_cadence: every-other-day
-current_progress: "Day 1-6 completed; Day 7 pending"
+current_progress: "Day 1-7 completed; Cycle 2 prepared"
 ---
 
 # 第 1 周：CFOP 基础与瓶颈定位
@@ -26,7 +26,7 @@ current_progress: "Day 1-6 completed; Day 7 pending"
 | 第 9 天 | Day 4：2-look PLL 入门 | 已完成（公式 10 / 10，识别 3 / 3） |
 | 第 11 天 | Day 5：F2L 慢拧与少转体 | 已完成（少转体 7 / 10） |
 | 第 13 天 | Day 6：整合与周期测试 | 已完成（ao12 55.70 秒） |
-| 第 14 天 | Day 7：恢复与周期复盘 | 下一次 |
+| 第 14 天 | Day 7：恢复与周期复盘 | 已完成 |
 
 ## 本周目标
 
@@ -220,6 +220,10 @@ Day 6 结果：[[Training Logs/2026-09-02 Day 6 Weekly Assessment|训练日志]]
 2. 轻松复习 5 分钟：每个公式做 3 次，不计时。
 3. 使用 [[Templates/Weekly Review|周复盘模板]] 完成 10 分钟复盘。
 4. 只选择一个下周主要短板：F2L 配对、F2L 停顿、OLL 识别、PLL 识别或公式稳定性。
+
+Day 7 结果：[[Training Logs/2026-09-06 Day 7 Cycle Review|训练日志]]
+
+第一周期总结：[[Reviews/2026-09-06 Cycle 01 Review|周期复盘]]
 
 ## 周末反馈
 

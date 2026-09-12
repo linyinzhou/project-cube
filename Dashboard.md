@@ -7,7 +7,7 @@ status: active
 current_method: CFOP
 method_status: under-evaluation
 training_cadence: every-other-day
-current_session: "Week 02 / Day 1 pending"
+current_session: "Week 02 / Day 2 pending"
 target_seconds: 30
 target_date: 2027-02-05
 ---
@@ -22,7 +22,7 @@ target_date: 2027-02-05
 - 当前水平：Day 6 原始平均 56.40 秒，ao12 55.70 秒，best 43.62 秒
 - 当前阶段：第 2 周期 · F2L 少转体与衔接
 - 当前方法：CFOP（作为起点，不锁定）
-- 当前进度：第 1 训练周期 7 / 7 完成，下一次执行第 2 周期 Day 1
+- 当前进度：第 2 训练周期 Day 1 已完成，下一次执行 Day 2
 - 训练节奏：隔天一练，原一周计划用约 14 天完成
 - 调整方式：每次训练后根据日志决定继续、重复、降难度或进阶
 - 本周主要短板：F2L 转体过多，以及由找棱块引发的 pair 间停顿
@@ -41,7 +41,8 @@ target_date: 2027-02-05
 - [x] 完成 [[Training Logs/2026-09-02 Day 6 Weekly Assessment|Day 6 整合与周测]]（ao12 55.70 秒，无处罚）
 - [x] 完成 [[Training Logs/2026-09-06 Day 7 Cycle Review|Day 7 恢复与周期复盘]]
 - [x] 完成 [[Reviews/2026-09-06 Cycle 01 Review|第一周期总结]]
-- [ ] 执行 [[Plans/Week 02 - F2L Rotation and Flow#Day 1：转体基线与固定观察顺序（45 分钟）|第 2 周期 Day 1]]
+- [x] 完成 [[Training Logs/2026-09-12 Cycle 02 Day 1 Rotation Baseline|第 2 周期 Day 1]]（少转体 12 / 12，最多 2 次）
+- [ ] 执行 [[Plans/Week 02 - F2L Rotation and Flow#Day 2：找对应棱块（45 分钟）|第 2 周期 Day 2]]
 - [ ] 第 4 周完成 [[Assessments/Method Evaluation|速拧方法评估]]
 - [ ] 从 [[Templates/Training Session|训练记录模板]] 创建首次训练记录
 - [ ] 周末从 [[Templates/Weekly Review|周复盘模板]] 创建首次周复盘
@@ -98,6 +99,9 @@ target_date: 2027-02-05
 
 > [!success] 第一周期完成
 > 7 / 7 训练完成；四个公式均能保留。第二周期总量提高约 23%，唯一主线为 F2L 少转体与衔接，不新增公式。
+
+> [!success] 第二周期 Day 1 达标
+> 刻意控制转体时达到 12 / 12，单次最多 2 次；转体主要出现在第 2、3 个 pair。下一次检查找对应棱块的效率，并继续用随机打乱验证迁移。
 
 | 指标 | 当前值 | 阶段目标 |
 | --- | ---: | ---: |

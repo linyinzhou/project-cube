@@ -4,7 +4,7 @@ import { useState } from "react";
 import { FormulaLibrary } from "../src/components/FormulaLibrary";
 import { InteractiveFormulaList } from "../src/components/InteractiveFormulaList";
 
-const weekTwoDayOneScrambles = [
+const weekTwoScrambleBankA = [
   "L2 D2 L' B' R2 L' B F2 U B2 U D L2 F2 U B2 U B2 R2 B U'",
   "D B' U R' D L U B U B' L2 B2 D R2 B2 U R2 U2 L2 B2",
   "L' U2 B U B2 U2 D' L F R2 F L2 F' B2 U2 B' L2 B2 U2 L2 R'",
@@ -34,8 +34,8 @@ const solves = [
 ] as const;
 
 const plan = [
-  { day: "Day 1", focus: "转体基线与观察顺序", state: "下一次", status: "current" },
-  { day: "Day 2", focus: "寻找对应棱块", state: "未开始", status: "pending" },
+  { day: "Day 1", focus: "转体基线与观察顺序", state: "完成 · 12/12", status: "done" },
+  { day: "Day 2", focus: "寻找对应棱块", state: "下一次", status: "current" },
   { day: "Day 3", focus: "单 pair 无转体解法", state: "未开始", status: "pending" },
   { day: "Day 4", focus: "pair 间衔接", state: "未开始", status: "pending" },
   { day: "Day 5", focus: "少转体完整 F2L", state: "未开始", status: "pending" },
@@ -65,7 +65,7 @@ export default function Home() {
         </div>
         <div className="top-status">
           <span className="status-dot" />
-          <span>第 2 周期 · Day 1 待训练</span>
+          <span>第 2 周期 · Day 2 待训练</span>
         </div>
       </header>
 
@@ -76,7 +76,7 @@ export default function Home() {
               <p className="eyebrow">OVERVIEW</p>
               <h2 id="overview-title">从 56.40 秒到稳定 Sub-30</h2>
             </div>
-            <p className="updated">更新于 2026-09-06</p>
+            <p className="updated">更新于 2026-09-12</p>
           </div>
 
           <div className="metric-grid">
@@ -133,20 +133,20 @@ export default function Home() {
 
         <section className="next-session" aria-labelledby="next-title">
           <div className="next-copy">
-            <p className="eyebrow">CYCLE 2 · DAY 1 · 45 MIN</p>
-            <h2 id="next-title">转体基线与固定观察顺序</h2>
-            <p className="session-intro">第一周期 7 / 7 完成。四个公式都能记住，当前唯一主线改为 F2L：固定按“角块 → 对应棱块 → 槽位”观察，并记录每次整体转体发生的位置。</p>
+            <p className="eyebrow">CYCLE 2 · DAY 2 · 45 MIN</p>
+            <h2 id="next-title">寻找对应棱块</h2>
+            <p className="session-intro">Day 1 在刻意控制下达到 12 / 12，最多转体 2 次，转体集中在第 2、3 个 pair。今天先解决转体背后的原因：看到角块后，能否在转动前找到它的对应棱块和目标槽位。</p>
             <ol className="session-steps">
-              <li><span>05</span><div><strong>复习与热身</strong><p>四个已学公式各做 1 次，再做 1 次不计时 Cross。</p></div></li>
-              <li><span>25</span><div><strong>固定打乱专项 · 8 次</strong><p>使用右侧打乱完成 Cross + 全部 F2L；每个 pair 都按固定顺序确认后再转动。</p></div></li>
-              <li><span>10</span><div><strong>随机迁移 · 4 次</strong><p>使用 csTimer 普通 3×3×3 随机打乱，完成 Cross + 全部 F2L，不记录总时间。</p></div></li>
-              <li><span>05</span><div><strong>记录转体</strong><p>记录 12 次的整体转体数，以及转体发生在第几个 pair。</p></div></li>
+              <li><span>05</span><div><strong>观察热身</strong><p>做 2 次 Cross + 第一组 F2L，不计时；每组开始前先说出角块的两种侧面颜色。</p></div></li>
+              <li><span>25</span><div><strong>三点指认 · 24 pairs</strong><p>使用右侧 6 条固定打乱。每个 pair 开始前依次指出角块、对应棱块、目标槽位，确认后才转动。</p></div></li>
+              <li><span>10</span><div><strong>随机迁移 · 4 次</strong><p>使用 csTimer 普通 3×3×3 随机打乱完成 Cross + F2L，保持相同观察顺序，不记录总时间。</p></div></li>
+              <li><span>05</span><div><strong>记录难点</strong><p>统计 24 个 pair 的正确指认数，并记下最难寻找的棱块颜色组合。</p></div></li>
             </ol>
-            <div className="success-rule"><strong>完成标准</strong><span>12 次中至少 9 次整体转体不超过 2 次。未达标也保留真实结果，不追加训练。</span></div>
+            <div className="success-rule"><strong>完成标准</strong><span>24 个 pair 中至少 20 个能在转动前正确指出角块、对应棱块和槽位。</span></div>
           </div>
           <div className="scramble-panel">
-            <div className="panel-heading"><h3>固定打乱 A</h3><span>8 F2L drills</span></div>
-            <InteractiveFormulaList items={weekTwoDayOneScrambles} />
+            <div className="panel-heading"><h3>固定打乱 A · 前 6 条</h3><span>24 pairs</span></div>
+            <InteractiveFormulaList items={weekTwoScrambleBankA.slice(0, 6)} />
           </div>
         </section></>}
 
@@ -155,10 +155,10 @@ export default function Home() {
             <div><strong>14</strong><span>自然日</span></div>
             <div><strong>7</strong><span>训练日</span></div>
             <div><strong>≈5h</strong><span>周期训练量</span></div>
-            <div><strong>0 / 7</strong><span>当前完成</span></div>
+            <div><strong>1 / 7</strong><span>当前完成</span></div>
           </div>
           <div className="plan-section">
-            <div className="section-heading"><div><p className="eyebrow">TRAINING CYCLE</p><h2 id="plan-title">第 2 训练周期</h2></div><span className="cycle-count">0 / 7</span></div>
+            <div className="section-heading"><div><p className="eyebrow">TRAINING CYCLE</p><h2 id="plan-title">第 2 训练周期</h2></div><span className="cycle-count">1 / 7</span></div>
             <p className="muted">隔天一练，约 14 个自然日完成。不补课，未完成任务顺延。</p>
             <div className="plan-list">
               {plan.map((item, index) => (
@@ -171,7 +171,7 @@ export default function Home() {
         </section>}
 
         {activeView === "today" && <section className="results-section" aria-labelledby="results-title">
-            <div className="section-heading"><div><p className="eyebrow">DAY 1 RESULTS</p><h2 id="results-title">基线明细</h2></div><span className="record-count">8 / 8 有效</span></div>
+            <div className="section-heading"><div><p className="eyebrow">CYCLE 1 BASELINE</p><h2 id="results-title">首周期基线明细</h2></div><span className="record-count">8 / 8 有效</span></div>
             <div className="table-wrap">
               <table>
                 <thead><tr><th>#</th><th>总时</th><th>Cross</th><th>F2L</th><th>OLL</th><th>PLL</th></tr></thead>

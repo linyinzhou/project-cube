@@ -9,7 +9,7 @@ starting_average_seconds: 56.40
 planned_minutes: 295
 calendar_days: 14
 training_cadence: every-other-day
-current_progress: "Cycle 1 completed; Day 1 pending"
+current_progress: "Day 1 completed; Day 2 pending"
 primary_focus: F2L rotation control and flow
 formula_policy: retention only
 ---
@@ -73,6 +73,9 @@ formula_policy: retention only
 4. 记录 5 分钟：记录 12 次的整体转体数，以及转体发生在第几个 pair。
 
 完成标准：12 次中至少 9 次整体转体不超过 2 次。
+
+> [!success] 2026-09-12 完成
+> 12 / 12 次整体转体均不超过 2 次，单次最多 2 次；转体主要发生在第 2、3 个 pair。详见 [[Training Logs/2026-09-12 Cycle 02 Day 1 Rotation Baseline|训练日志]]。
 
 ## Day 2：找对应棱块（45 分钟）
 

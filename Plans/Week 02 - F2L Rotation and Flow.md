@@ -9,7 +9,7 @@ starting_average_seconds: 56.40
 planned_minutes: 295
 calendar_days: 14
 training_cadence: every-other-day
-current_progress: "Day 1 completed; Day 2 pending"
+current_progress: "Day 1-2 completed; Day 3 pending"
 primary_focus: F2L rotation control and flow
 formula_policy: retention only
 ---
@@ -85,6 +85,9 @@ formula_policy: retention only
 4. 记录 5 分钟：统计正确指认数和最难找到的棱块颜色组合。
 
 完成标准：24 个 pair 中至少 20 个能在转动前正确指出。
+
+> [!success] 2026-09-17 完成
+> 24 / 24 个 pair 均能在转动前正确指出角块、对应棱块和槽位；最难寻找的棱块颜色组合未记录。详见 [[Training Logs/2026-09-17 Cycle 02 Day 2 Edge Search|训练日志]]。
 
 ## Day 3：单 pair 无转体解法（45 分钟）
 
